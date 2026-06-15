@@ -1,0 +1,35 @@
+.highlights{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.highlight-card{
+    background:#ffffff;
+    padding:20px 30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    text-align:center;
+    min-width:200px;
+    transition:all 0.3s ease;
+}
+
+.highlight-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
+
+.highlight-card h3{
+    color:#102A43;
+    font-size:1.5rem;
+    margin-bottom:5px;
+    font-weight:700;
+}
+
+.highlight-card p{
+    color:#D97745;
+    font-weight:600;
+    margin:0;
+}
