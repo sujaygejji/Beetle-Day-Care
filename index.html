@@ -1,262 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8051 Railway Gate Controller Dashboard</title>
-    <style>
-        :root {
-            --bg-color: #f4f6f9;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-            --primary: #007bff;
-            --danger: #dc3545;
-            --success: #28a745;
-        }
+<section class="simulation-container">
+    <div class="simulation-header">
+        <h2>🎛️ Live Campus Infrastructure Monitor</h2>
+        <p>Real-time simulation of our automated safety gates running on 8051 Microcontroller logic.</p>
+    </div>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            color: #1a202c;
-        }
-
-        header p {
-            color: #718096;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-
-        /* Responsive Grid Layout */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 30px;
-        }
-
-        /* Uniform Gallery Card Styling */
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Equal Sized Visual Indicators */
-        .status-indicator {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background-color: #e2e8f0;
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-            color: #4a5568;
-            transition: all 0.3s ease;
-            border: 4px solid #cbd5e0;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            color: #2d3748;
-        }
-
-        /* Control Panel Styles */
-        .controls-card {
-            grid-column: 1 / -1;
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            width: 100%;
-            max-width: 1200px;
-            text-align: center;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 15px;
-        }
-
-        button {
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            flex: 1;
-            min-width: 140px;
-            max-width: 200px;
-        }
-
-        .btn-arrives { background-color: var(--danger); color: white; }
-        .btn-leaves { background-color: var(--success); color: white; }
-        .btn-reset { background-color: #6c757d; color: white; }
-
-        button:active {
-            transform: scale(0.98);
-        }
-
-        /* Dynamic State Classes */
-        .active-buzzer {
-            background-color: #fff5f5;
-            border-color: var(--danger);
-            color: var(--danger);
-            box-shadow: 0 0 15px rgba(220, 53, 69, 0.2);
-            animation: pulse 1s infinite alternate;
-        }
-
-        .active-gate-close {
-            background-color: #fffaf0;
-            border-color: #dd6b20;
-            color: #dd6b20;
-        }
-
-        .active-gate-open {
-            background-color: #f0fff4;
-            border-color: var(--success);
-            color: var(--success);
-        }
-
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.05); }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Smart Railway Gate Control System</h1>
-        <p>Microcontroller 8051 Simulation Dashboard</p>
-    </header>
-
-    <div class="dashboard-grid">
-        <div class="card">
-            <h3>Track Sensors (P0)</h3>
-            <div id="sensorStatus" class="status-indicator">IDLE STATE</div>
-            <p>Monitoring tracks...</p>
+    <div class="gallery-grid">
+        <div class="gallery-card">
+            <span class="card-icon">📟</span>
+            <h3>Track Sensors (Port 0)</h3>
+            <div id="sensorStatus" class="indicator-circle idle">STANDBY</div>
+            <p class="card-desc">Ultrasonic Track Array</p>
         </div>
 
-        <div class="card">
-            <h3>Buzzer Alarm (P1^0)</h3>
-            <div id="buzzerStatus" class="status-indicator">OFF</div>
-            <p>Audio Alerts</p>
+        <div class="gallery-card">
+            <span class="card-icon">🔔</span>
+            <h3>Safety Buzzer (P1^0)</h3>
+            <div id="buzzerStatus" class="indicator-circle idle">SILENT</div>
+            <p class="card-desc">Audio Alert System</p>
         </div>
 
-        <div class="card">
-            <h3>Gate Mechanism (P2)</h3>
-            <div id="gateStatus" class="status-indicator">OPENED</div>
-            <p>Motor Control Status</p>
+        <div class="gallery-card">
+            <span class="card-icon">🚧</span>
+            <h3>Security Gate (Port 2)</h3>
+            <div id="gateStatus" class="indicator-circle open">OPEN</div>
+            <p class="card-desc">Motor Position State</p>
         </div>
     </div>
 
-    <div class="controls-card">
-        <h3>Simulation Input Controls</h3>
-        <div class="btn-group">
-            <button class="btn-arrives" onclick="triggerArrives()">Train Arrives</button>
-            <button class="btn-leaves" onclick="triggerLeaves()">Train Leaves</button>
-            <button class="btn-reset" onclick="triggerReset()">Reset System</button>
+    <div class="control-dock">
+        <h4>Simulate Hardware Interrupt Signals:</h4>
+        <div class="button-row">
+            <button class="sim-btn btn-danger" onclick="runTrainArrives()">Train Arrives</button>
+            <button class="sim-btn btn-success" onclick="runTrainLeaves()">Train Leaves</button>
+            <button class="sim-btn btn-secondary" onclick="runTrainReset()">System Reset</button>
         </div>
     </div>
-
-    <script>
-        const sensorDiv = document.getElementById('sensorStatus');
-        const buzzerDiv = document.getElementById('buzzerStatus');
-        const gateDiv = document.getElementById('gateStatus');
-
-        function triggerArrives() {
-            // Update Sensor Layout
-            sensorDiv.innerText = "TRAIN DETECTED";
-            sensorDiv.className = "status-indicator active-buzzer";
-
-            // Update Buzzer Output
-            buzzerDiv.innerText = "BUZZING";
-            buzzerDiv.className = "status-indicator active-buzzer";
-
-            // Update Gate Motor Action
-            gateDiv.innerText = "CLOSING...";
-            gateDiv.className = "status-indicator active-gate-close";
-
-            // Simulate the 8051 Delay loop turning motor off after gate closes
-            setTimeout(() => {
-                if(sensorDiv.innerText === "TRAIN DETECTED") {
-                    gateDiv.innerText = "CLOSED";
-                    gateDiv.className = "status-indicator active-gate-close";
-                }
-            }, 1500);
-        }
-
-        function triggerLeaves() {
-            sensorDiv.innerText = "TRAIN CLEARING";
-            sensorDiv.className = "status-indicator active-gate-open";
-
-            buzzerDiv.innerText = "OFF";
-            buzzerDiv.className = "status-indicator";
-
-            gateDiv.innerText = "OPENING...";
-            gateDiv.className = "status-indicator active-gate-open";
-
-            setTimeout(() => {
-                if(sensorDiv.innerText === "TRAIN CLEARING") {
-                    gateDiv.innerText = "OPENED";
-                    gateDiv.className = "status-indicator";
-                    sensorDiv.innerText = "IDLE STATE";
-                    sensorDiv.className = "status-indicator";
-                }
-            }, 1500);
-        }
-
-        function triggerReset() {
-            sensorDiv.innerText = "IDLE STATE";
-            sensorDiv.className = "status-indicator";
-            
-            buzzerDiv.innerText = "OFF";
-            buzzerDiv.className = "status-indicator";
-            
-            gateDiv.innerText = "OPENED";
-            gateDiv.className = "status-indicator";
-        }
-    </script>
-</body>
-</html>
+</section>
