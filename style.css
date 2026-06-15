@@ -99,13 +99,16 @@ body{
     font-size:70px;
     line-height:1.1;
     color:#102A43;
-    margin-bottom:20px;
+    margin-bottom:5px;
 }
 
 .hero-tagline{
-    font-size:32px;
+    font-size:28px;
     color:#D97745;
-    margin-bottom:20px;
+    margin-top:0;
+    margin-bottom:25px;
+    font-weight:700;
+}
 }
 
 .hero-content p{
