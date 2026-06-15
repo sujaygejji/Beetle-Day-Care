@@ -13,7 +13,7 @@ body {
     color: #102A43;
     background-color: #FFFFFF;
     line-height: 1.6;
-    padding-top: 80px; /* Prevents hero content from hiding behind the fixed navbar */
+    padding-top: 80px; /* Prevents hero content from hiding behind fixed navbar */
 }
 
 h1, h2, h3 {
@@ -36,7 +36,7 @@ h1, h2, h3 {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #F0F4F8; /* Soft, slightly darker premium background tint */
+    background-color: #F0F4F8; /* Soft premium background tint */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -189,7 +189,7 @@ h1, h2, h3 {
     box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
-/* HIGHLIGHTS BAR (Fixed Inline) */
+/* HIGHLIGHTS BAR */
 .highlight-bar {
     background: white;
     padding: 20px 30px;
@@ -217,18 +217,14 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   4. ABOUT SECTION (Soft Cream Color Shift)
-   ========================================== */
-/* ==========================================
-   4. ABOUT SECTION (Robust Side-by-Side Layout)
+   4. ABOUT SECTION 
    ========================================== */
 .about-section {
     padding: 80px 0;
-    background-color: #Faf8f5; /* Soft background tint */
+    background-color: #Faf8f5; 
     width: 100%;
 }
 
-/* Force a stable flex layout that won't let columns collapse */
 .about-grid {
     display: flex;
     flex-direction: row;
@@ -238,10 +234,9 @@ h1, h2, h3 {
     width: 100%;
 }
 
-/* Give the text side plenty of room (60% of the screen width) */
 .about-content {
     flex: 0 0 55%; 
-    min-width: 320px; /* Prevents it from crushing on smaller screens */
+    min-width: 320px; 
     text-align: left;
 }
 
@@ -256,7 +251,6 @@ h1, h2, h3 {
     margin-bottom: 12px;
 }
 
-/* Explicitly force the tagline to span full horizontal lines */
 .about-tagline {
     font-family: 'Fredoka', sans-serif;
     font-size: 2.8rem;
@@ -265,9 +259,9 @@ h1, h2, h3 {
     margin-bottom: 20px;
     font-weight: 600;
     line-height: 1.3;
-    white-space: normal; /* Allows normal sentence layout */
+    white-space: normal; 
     display: block;
-    width: 100%; /* Spans the entire width of the content column */
+    width: 100%; 
 }
 
 .about-text {
@@ -278,7 +272,6 @@ h1, h2, h3 {
     margin-bottom: 30px;
 }
 
-/* Feature Grid Cards */
 .about-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -304,7 +297,6 @@ h1, h2, h3 {
     margin: 0;
 }
 
-/* Give the image wrapper the remaining 40% of space */
 .about-image-wrapper {
     flex: 0 0 40%;
     display: flex;
@@ -320,8 +312,9 @@ h1, h2, h3 {
     border: 15px solid #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
+
 /* ==========================================
-   5. PROGRAMS SECTION (Pure White Shift)
+   5. PROGRAMS SECTION
    ========================================== */
 .program-section {
     background-color: #FFFFFF;
@@ -373,9 +366,8 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   6. GALLERY SECTION (Light Pastel Beige Shift)
+   6. GALLERY SECTION (Optimized for 10 Photos)
    ========================================== */
-/* Gallery Section Base */
 .gallery-section {
     padding: 60px 20px;
     background-color: #ffffff;
@@ -395,40 +387,36 @@ h1, h2, h3 {
     margin-bottom: 40px;
 }
 
-/* The Magic Grid: Auto-calculates columns based on screen size */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; /* Space between the images */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Fits 10 images smoothly across viewports */
+    gap: 20px; 
 }
 
-/* Image Container Card */
 .gallery-item {
     position: relative;
-    border-radius: 20px; /* Playful curved corners */
-    overflow: hidden; /* Clips the image edge smoothly */
-    aspect-ratio: 1 / 1; /* Forces a perfect square ratio */
+    border-radius: 20px; 
+    overflow: hidden; 
+    aspect-ratio: 1 / 1; 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
 .gallery-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* The Secret Sauce: Resizes ANY original size/shape to fit perfectly */
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Zooms/crops dynamically without stretching or squishing */
-    object-position: center; /* Keeps the middle of the image in focus */
+    object-fit: cover; 
+    object-position: center; 
     display: block;
 }
 
 /* ==========================================
-   7. CONTACT & MAP SECTION (Pure White Shift)
+   7. CONTACT & MAP SECTION
    ========================================== */
 .contact-section {
     background-color: #FFFFFF;
@@ -480,7 +468,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   8. FORM INQUIRY SECTION (Soft Cream Shift)
+   8. FORM INQUIRY SECTION
    ========================================== */
 .form-section {
     background-color: #FFFDF9;
@@ -553,7 +541,7 @@ footer {
    10. RESPONSIVE MOBILE COMPATIBILITY
    ========================================== */
 @media (max-width: 992px) {
-    .hero-container, .about-grid {
+    .hero-container {
         flex-direction: column;
         text-align: center;
     }
@@ -563,44 +551,9 @@ footer {
     .hero-buttons {
         justify-content: center;
     }
-    .program-grid {
-        flex-direction: column;
-    }
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .highlight-bar {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-    }
-}
-
-
-/* ==========================================
-   10. RESPONSIVE MOBILE COMPATIBILITY
-   ========================================== */
-@media (max-width: 992px) {
-    .hero-container, .about-grid {
+    .about-grid {
         flex-direction: column !important;
         text-align: center;
-    }
-    .hero-content p {
-        margin: 0 auto 30px auto;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-    .program-grid {
-        flex-direction: column;
-    }
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .highlight-bar {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
     }
     .about-content {
         flex: 0 0 100%;
@@ -610,21 +563,62 @@ footer {
         flex: 0 0 100%;
         margin-top: 30px;
     }
+    .about-tagline {
+        font-size: 2.2rem;
+    }
+    .program-grid {
+        flex-direction: column;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    /* Fixed header text cutting off on mobile */
+    body {
+        padding-top: 120px; /* Gives perfect breathing space for stacked header on mobile */
+    }
+    
+    /* Fixed mobile text overlap layout */
     .nav-container {
         flex-direction: column;
         gap: 12px;
         padding: 10px;
     }
+    
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
+        gap: 14px;
+        width: 100%;
     }
-    body {
-        padding-top: 110px; /* Gives extra space since navbar gets taller on mobile */
+    
+    .nav-menu a {
+        font-size: 14px;
+        padding: 4px 6px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-tagline {
+        font-size: 20px;
+    }
+
+    .highlight-bar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr; /* Stacks feature badges on mobile phones */
+    }
+
+    /* Displays 10 gallery photos cleanly into 2 columns on phones */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 }
