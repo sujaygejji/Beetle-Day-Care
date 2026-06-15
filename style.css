@@ -30,62 +30,21 @@ h1, h2, h3 {
 /* ==========================================
    2. FIXED HEADER & NAVIGATION
    ========================================== */
+/* ==========================================
+   2. FIXED HEADER & NAVIGATION (Clean Premium Look)
+   ========================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #CBD5E1; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Standard Modern Look: Pure crisp white with a tiny bit of glass-like transparency */
+    background-color: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(8px); /* Subtle modern blur effect */
+    box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05); /* Softer, elegant shadow */
     z-index: 1000;
+    border-bottom: 1px solid rgba(16, 42, 67, 0.04);
 }
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 14px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 12px;
-}
-
-.logo-img {
-    height: 48px;
-    width: auto;
-    object-fit: contain;
-}
-
-.brand-name {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: #102A43;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 24px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #0F172A; 
-    font-weight: 700;
-    font-size: 16px;
-    transition: color 0.2s ease;
-}
-
-.nav-menu a:hover {
-    color: #D97745;
-}
-
 /* ==========================================
    3. HERO SECTION (Pure White)
    ========================================== */
