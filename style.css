@@ -348,6 +348,9 @@ h1, h2, h3 {
 /* ==========================================
    7. CONTACT SECTION (Bold Highlighted Bar)
    ========================================== */
+/* ==========================================
+   7. CONTACT SECTION (Fixed Highlight Bar Layout)
+   ========================================== */
 .contact-section {
     background-color: #F5EFEB; 
     text-align: center;
@@ -412,11 +415,12 @@ h1, h2, h3 {
     font-size: 18px;
 }
 
+/* Forces everything inside this element to stack vertically on all devices */
 .address-item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: flex-start; 
+    gap: 10px;
 }
 
 .address-text-row {
@@ -425,7 +429,14 @@ h1, h2, h3 {
     gap: 10px;
 }
 
+.button-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .inline-map-btn {
+    display: inline-block;
     background-color: #2B6CB0;
     color: #FFFFFF;
     text-decoration: none;
@@ -434,7 +445,7 @@ h1, h2, h3 {
     font-weight: 700;
     font-size: 13px;
     white-space: nowrap;
-    margin-left: 28px; /* Pushes button beautifully below the text row */
+    margin-left: 28px; /* Indents the button so it aligns cleanly under the street address text */
     box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
@@ -443,7 +454,6 @@ h1, h2, h3 {
     background-color: #1A4976;
     transform: translateY(-2px);
 }
-
 /* ==========================================
    8. FORM INQUIRY SECTION (Soft Cream Color)
    ========================================== */
