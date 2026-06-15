@@ -1,15 +1,15 @@
-```javascript id="s49sve"
-// Smooth scrolling for navigation links
+```javascript id="2vxm5j"
+// Smooth scrolling for menu links
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    anchor.addEventListener('click', function (e) {
+    link.addEventListener('click', function(e) {
 
         e.preventDefault();
 
-        const target = document.querySelector(
-            this.getAttribute('href')
-        );
+        const target =
+        document.querySelector(
+        this.getAttribute('href'));
 
         if(target){
 
@@ -26,9 +26,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Fade-in animation on scroll
 
-const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
 
         if(entry.isIntersecting){
 
@@ -44,26 +44,27 @@ const observer = new IntersectionObserver(entries => {
 
 
 document.querySelectorAll(
-'.hero-content, .hero-image, .about-grid, .program-card, .gallery-grid img, .contact-info, .form-section'
-).forEach(element => {
+'.hero-content, .hero-image, .about-grid, .program-card, .gallery-grid img, .contact-info'
+).forEach((el) => {
 
-    element.classList.add('hidden');
+    el.classList.add('hidden');
 
-    observer.observe(element);
+    observer.observe(el);
 
 });
 
 
-// Navbar shadow while scrolling
+// Navbar shadow effect
 
 window.addEventListener('scroll', () => {
 
-    const navbar = document.querySelector('.navbar');
+    const navbar =
+    document.querySelector('.navbar');
 
     if(window.scrollY > 50){
 
         navbar.style.boxShadow =
-        '0 4px 15px rgba(0,0,0,0.12)';
+        '0 5px 20px rgba(0,0,0,0.12)';
 
     }
     else{
@@ -76,12 +77,35 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Welcome message
+// Gallery image hover effect
+
+document.querySelectorAll(
+'.gallery-grid img'
+).forEach((img) => {
+
+    img.addEventListener('mouseenter', () => {
+
+        img.style.transform =
+        'scale(1.05)';
+
+    });
+
+    img.addEventListener('mouseleave', () => {
+
+        img.style.transform =
+        'scale(1)';
+
+    });
+
+});
+
+
+// Page loaded message
 
 window.addEventListener('load', () => {
 
     console.log(
-        'Welcome to Beetle Day Care'
+    'Beetle Day Care website loaded successfully'
     );
 
 });
