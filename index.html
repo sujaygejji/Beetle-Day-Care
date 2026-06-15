@@ -1,350 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beetle Daycare</title>
-    <!-- Cute Google Font for a friendly, professional look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #e67e22;      /* Playful Soft Orange */
-            --secondary: #2ecc71;    /* Playful Soft Green */
-            --bg-cream: #fdfaf4;     /* Warm Cream Background */
-            --card-bg: #ffffff;
-            --text-dark: #4a3728;    /* Soft Brown text instead of harsh black */
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Quicksand', 'Segoe UI', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        body {
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+<title>Beetle Daycare</title>
 
-        /* Hero Banner with Cute Pattern Overlays or Images */
-        header {
-            background: linear-gradient(135deg, #ffeaa7 0%, #ffeedd 100%);
-            padding: 4rem 1rem;
-            text-align: center;
-            border-bottom: 5px dashed var(--primary);
-            position: relative;
-        }
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        header h1 {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 0px #fff;
-        }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
 
-        header p {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
+<style>
 
-        /* Decorative Cartoon Elements */
-        header::before, header::after {
-            content: "🐞";
-            font-size: 2.5rem;
-            position: absolute;
-            bottom: 10px;
-        }
-        header::before { left: 10%; }
-        header::after { right: 10%; }
+body{
+    background:#FFF8EC;
+    font-family:'Quicksand',sans-serif;
+    color:#4a3728;
+}
 
-        nav {
-            background-color: var(--primary);
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+h1,h2,h3,h4{
+    font-family:'Fredoka',sans-serif;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1.2rem;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
+.navbar{
+    background:#FF9F43;
+}
 
-        nav a:hover {
-            color: #ffeaa7;
-        }
+.navbar-brand,
+.nav-link{
+    color:white !important;
+    font-weight:600;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
+.hero{
+    background:linear-gradient(135deg,#FFF1C7,#FFE4C4);
+    padding:90px 20px;
+    text-align:center;
+}
 
-        section {
-            padding: 4rem 0;
-        }
+.hero h1{
+    color:#E67E22;
+    font-size:4rem;
+}
 
-        h2 {
-            font-family: 'Fredoka', sans-serif;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            text-align: center;
-        }
+.hero p{
+    font-size:1.2rem;
+}
 
-        /* Flexible Grid Systems */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
+.btn-custom{
+    background:#2ECC71;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:bold;
+}
 
-        .card {
-            background-color: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 16px rgba(165, 110, 40, 0.06);
-            border: 2px solid #f3ebe1;
-            text-align: center;
-        }
+.section-title{
+    text-align:center;
+    color:#E67E22;
+    margin-bottom:50px;
+}
 
-        .card h3 {
-            font-family: 'Fredoka', sans-serif;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
+.card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-        /* Cute Baby/Cartoon Placeholder Image styling */
-        .baby-img-box {
-            width: 100%;
-            max-width: 500px;
-            height: 300px;
-            margin: 0 auto 2rem auto;
-            border-radius: 30px;
-            border: 6px dashed var(--secondary);
-            overflow: hidden;
-            background-color: #fff;
-        }
+.service-icon{
+    font-size:60px;
+}
 
-        .baby-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.gallery img{
+    border-radius:20px;
+    height:250px;
+    object-fit:cover;
+}
 
-        /* Pricing Styling - Fixed per requirements */
-        .pricing-card {
-            background-color: var(--card-bg);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            border: 3px solid var(--secondary);
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
-        }
+.pricing-card{
+    border:3px solid #2ECC71;
+}
 
-        .price {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 3rem;
-            color: var(--secondary);
-            margin: 1rem 0;
-        }
+.price{
+    font-size:3rem;
+    color:#2ECC71;
+    font-weight:bold;
+}
 
-        .price span {
-            font-size: 1.2rem;
-            color: #888;
-            font-family: 'Quicksand', sans-serif;
-        }
+.contact-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-        /* Cleaned Forms */
-        .form-box {
-            background: white;
-            padding: 3rem;
-            border-radius: 24px;
-            border: 2px solid #f3ebe1;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+footer{
+    background:#4A3728;
+    color:white;
+    padding:25px;
+    text-align:center;
+    margin-top:60px;
+}
 
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #f3ebe1;
-            border-radius: 12px;
-            font-size: 1rem;
-            background-color: var(--bg-cream);
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        button {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 4px 0px #b35d13;
-            transition: all 0.2s;
-        }
-
-        button:hover {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0px #b35d13;
-        }
-
-        footer {
-            background-color: #3e2f24;
-            color: #fdfaf4;
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 5rem;
-            font-weight: 600;
-        }
-
-        footer a {
-            color: #ffeaa7;
-            text-decoration: none;
-        }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            nav a { display: block; margin: 0.8rem 0; }
-        }
-    </style>
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Beetle Daycare</h1>
-        <p>A Cute, Safe, and Nurturing Space for Your Little Bugs 🐞</p>
-    </header>
+<!-- Navbar -->
 
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#rates">Rates & Hours</a>
-        <a href="#firstday">First Day Info</a>
-        <a href="#apply">Apply Now</a>
-    </nav>
+<nav class="navbar navbar-expand-lg">
+<div class="container">
 
-    <div class="container">
+<a class="navbar-brand" href="#">
+🐞 Beetle Daycare
+</a>
 
-        <!-- About / Showcase Section -->
-        <section id="about">
-            <!-- Centralized Cute Image Placement -->
-            <div class="baby-img-box">
-                <!-- Replace this src URL with your actual cute baby image asset path -->
-                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=1000" alt="Cute Happy Baby Playing">
-            </div>
+<button class="navbar-toggler bg-white"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-            <h2>Welcome to Our Happy Home</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Creative Play</h3>
-                    <p>Every single day is filled with engaging stories, musical games, and social interactive activities.</p>
-                </div>
-                <div class="card">
-                    <h3>Pure Safety</h3>
-                    <p>Our completely child-proofed facility guarantees absolute protection and regular care tracking.</p>
-                </div>
-            </div>
-        </section>
+<div class="collapse navbar-collapse" id="menu">
 
-        <!-- Rates Section (Daily Rate Removed Completely) -->
-        <section id="rates">
-            <h2>Rates & Schedule</h2>
-            <p style="text-align: center; margin-bottom: 2.5rem; font-size: 1.2rem; font-weight: bold;">
-                🕒 Open Monday through Friday — 7:00 AM to 6:00 PM
-            </p>
-            
-            <div class="grid" style="max-width: 800px; margin: 0 auto;">
-                <div class="pricing-card">
-                    <h3>Infant Track</h3>
-                    <div class="price">$350 <span>/ week</span></div>
-                    <p>Dedicated full-time scheduling focused on gentle care rhythms and discovery layouts.</p>
-                </div>
-                
-                <div class="pricing-card">
-                    <h3>Toddler Track</h3>
-                    <div class="price">$310 <span>/ week</span></div>
-                    <p>Active learning programs, motor-skills games, and peer language building blocks.</p>
-                </div>
-            </div>
-        </section>
+<ul class="navbar-nav ms-auto">
 
-        <!-- First Day Section (Physical Packing List Removed Completely) -->
-        <section id="firstday">
-            <h2>Preparing for the First Day</h2>
-            <div class="card" style="max-width: 750px; margin: 0 auto;">
-                <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-                    To make your child's onboarding experience perfectly smooth, our education team provides a customized personal checklist matching your little one’s specific age bracket directly upon registration. 
-                </p>
-                <p style="font-size: 1.1rem;">
-                    We fully take care of the everyday operational essentials on site so you can drop off your child completely stress-free!
-                </p>
-            </div>
-        </section>
+<li class="nav-item">
+<a class="nav-link" href="#about">About</a>
+</li>
 
-        <!-- Enrollment Section (Technical Jargon Removed) -->
-        <section id="apply">
-            <h2>Join Our Daycare Family</h2>
-            <div class="form-box">
-                <p style="text-align: center; margin-bottom: 2rem; font-weight: bold;">
-                    Fill out our simple interest form below. Our director will reach back out to you within 24–48 hours!
-                </p>
-                
-                <form action="https://formsubmit.co/your-actual-email@domain.com" method="POST">
-                    <div class="form-group">
-                        <label for="name">Parent Full Name</label>
-                        <input type="text" id="name" name="Name" placeholder="Jane Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="Email" placeholder="jane@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="notes">Tell Us About Your Child (Age, schedule needs)</label>
-                        <textarea id="notes" name="Message" rows="4" placeholder="My child is 14 months old..."></textarea>
-                    </div>
-                    <button type="submit">Submit Application</button>
-                </form>
-            </div>
-        </section>
+<li class="nav-item">
+<a class="nav-link" href="#services">Services</a>
+</li>
 
-    </div>
+<li class="nav-item">
+<a class="nav-link" href="#gallery">Gallery</a>
+</li>
 
-    <footer>
-        <p>© 2026 Beetle Daycare. All Rights Reserved.</p>
-        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #ffeaa7;">Providing trustworthy early learning environments.</p>
-    </footer>
+<li class="nav-item">
+<a class="nav-link" href="#pricing">Pricing</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>🐞 Beetle Daycare</h1>
+
+<p>
+A Safe, Happy and Loving Place for Your Little Ones
+</p>
+
+<br>
+
+<a href="#contact" class="btn btn-custom">
+Enroll Today
+</a>
+
+</div>
+
+</section>
+
+<!-- About -->
+
+<section id="about" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">
+Welcome to Our Family
+</h2>
+
+<div class="row align-items-center">
+
+<div class="col-md-6">
+
+<img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1000"
+class="img-fluid rounded-4">
+
+</div>
+
+<div class="col-md-6">
+
+<h3>Why Parents Love Us ❤️</h3>
+
+<p>
+We provide a nurturing environment where children learn, play, explore and grow under professional supervision.
+</p>
+
+<p>
+Our focus is on safety, creativity, social development and early childhood learning.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Services -->
+
+<section id="services" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">
+Our Services
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center h-100">
+
+<div class="service-icon">
+🎨
+</div>
+
+<h4>Creative Learning</h4>
+
+<p>
+Fun educational activities every day.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center h-100">
+
+<div class="service-icon">
+🧸
+</div>
+
+<h4>Safe Play Area</h4>
+
+<p>
+Child-friendly indoor and outdoor spaces.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center h-100">
+
+<div class="service-icon">
+🍎
+</div>
+
+<h4>Healthy Meals</h4>
+
+<p>
+Nutritious snacks and meals provided.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Gallery -->
+
+<section id="gallery" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">
+Happy Moments
+</h2>
+
+<div class="row gallery g-4">
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800" class="img-fluid">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800" class="img-fluid">
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?w=800" class="img-fluid">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Pricing -->
+
+<section id="pricing" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">
+Programs & Fees
+</h2>
+
+<div class="row g-4 justify-content-center">
+
+<div class="col-md-4">
+
+<div class="card pricing-card p-4 text-center">
+
+<h3>Infants</h3>
+
+<div class="price">
+$350
+</div>
+
+<p>Per Week</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card pricing-card p-4 text-center">
+
+<h3>Toddlers</h3>
+
+<div class="price">
+$310
+</div>
+
+<p>Per Week</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title">
+Contact Us
+</h2>
+
+<div class="row justify-content-center">
+
+<div class="col-md-7">
+
+<div class="contact-box">
+
+<form>
+
+<div class="mb-3">
+<label>Name</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Message</label>
+<textarea rows="4" class="form-control"></textarea>
+</div>
+
+<button class="btn btn-success w-100">
+Send Inquiry
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h5>🐞 Beetle Daycare</h5>
+
+<p>
+Providing Love, Learning & Care Every Day
+</p>
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
