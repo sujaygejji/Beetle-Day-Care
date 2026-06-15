@@ -375,31 +375,56 @@ h1, h2, h3 {
 /* ==========================================
    6. GALLERY SECTION (Light Pastel Beige Shift)
    ========================================== */
+/* Gallery Section Base */
 .gallery-section {
-    background-color: #F7F5F0; /* Soft warm alternative playground tone */
-    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    width: 100%;
 }
 
-.gallery-section h2 {
-    font-size: 36px;
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    font-family: 'Fredoka', sans-serif;
+    color: #102A43;
+    text-align: center;
+    font-size: 2.5rem;
     margin-bottom: 40px;
 }
 
+/* The Magic Grid: Auto-calculates columns based on screen size */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Space between the images */
 }
 
-.gallery-grid img {
+/* Image Container Card */
+.gallery-item {
+    position: relative;
+    border-radius: 20px; /* Playful curved corners */
+    overflow: hidden; /* Clips the image edge smoothly */
+    aspect-ratio: 1 / 1; /* Forces a perfect square ratio */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* The Secret Sauce: Resizes ANY original size/shape to fit perfectly */
+.gallery-item img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-    background-color: white;
-    padding: 10px; /* Frames the vector illustrations cleanly */
-    border: 1px solid #E4E1DA;
+    height: 100%;
+    object-fit: cover; /* Zooms/crops dynamically without stretching or squishing */
+    object-position: center; /* Keeps the middle of the image in focus */
+    display: block;
 }
 
 /* ==========================================
