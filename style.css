@@ -345,4 +345,264 @@ h1, h2, h3 {
 }
 
 .gallery-item {
-    border-
+    border-radius: 12px; 
+    overflow: hidden; 
+    aspect-ratio: 1 / 1; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* ==========================================
+   7. CONTACT SECTION (Left-Aligned Layout Fix)
+   ========================================== */
+.contact-section {
+    background-color: #F5EFEB; 
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.contact-highlight-box, .contact-strip {
+    position: relative;
+    background-color: #102A43 !important; 
+    padding: 30px 40px;
+    border-radius: 24px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 12px 30px rgba(16, 42, 67, 0.15);
+    border: 2px solid #D97745; 
+    display: flex;
+    justify-content: flex-start; /* Aligns all text items neatly to the left side */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;                   /* Creates the clean spacing between items */
+    max-width: 1100px;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-strip-inner, .contact-strip {
+    color: #FFFFFF !important;
+}
+
+.strip-item {
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF !important; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.strip-item a, .contact-strip a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+.strip-item i, .contact-strip i {
+    color: #FF9B6A !important; 
+    font-size: 18px;
+}
+
+.address-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.address-text-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.inline-map-btn, .contact-strip .btn-primary, .contact-section .btn-primary {
+    background-color: #2B6CB0 !important;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 13px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: none;
+}
+
+.inline-map-btn:hover {
+    background-color: #1A4976 !important;
+    transform: translateY(-2px);
+}
+
+.contact-section p {
+    color: #627D98;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   8. FORM INQUIRY SECTION
+   ========================================== */
+.form-section {
+    background-color: #FAF6F0; 
+}
+
+.form-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.inquiry-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.inquiry-form input, 
+.inquiry-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #E4EBF1;
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: #102A43;
+    outline: none;
+}
+
+.inquiry-form input:focus, 
+.inquiry-form textarea:focus {
+    border-color: #D97745;
+}
+
+.inquiry-form button {
+    background-color: #D97745;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
+}
+
+/* ==========================================
+   9. FOOTER
+   ========================================== */
+footer {
+    background-color: #102A43;
+    color: #BCCCDC;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+footer img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+footer a {
+    color: #BCCCDC;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+}
+
+/* ==========================================
+   10. RESPONSIVE MOBILE COMPATIBILITY
+   ========================================== */
+@media (max-width: 992px) {
+    .hero-container, .about-grid, .program-grid {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .hero-content p {
+        margin: 0 auto 30px auto;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .about-content, .about-image-wrapper {
+        flex: 0 0 100%;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    /* Safely handles mobile spacing and automatic center alignment */
+    .contact-highlight-box, .contact-strip {
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .address-item {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 140px; 
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 10px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+    .nav-menu a {
+        font-size: 14px;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .highlight-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .about-features, .form-grid-2 {
+        grid-template-columns: 1fr; 
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .address-text-row {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+}
