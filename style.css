@@ -577,10 +577,30 @@ footer {
 }
 
 
+/* ==========================================
+   10. RESPONSIVE MOBILE COMPATIBILITY
+   ========================================== */
 @media (max-width: 992px) {
-    .about-grid {
-        flex-direction: column !important; /* Stacks vertically on smaller screens */
+    .hero-container, .about-grid {
+        flex-direction: column !important;
         text-align: center;
+    }
+    .hero-content p {
+        margin: 0 auto 30px auto;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .program-grid {
+        flex-direction: column;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .highlight-bar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
     }
     .about-content {
         flex: 0 0 100%;
@@ -589,5 +609,22 @@ footer {
     .about-image-wrapper {
         flex: 0 0 100%;
         margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Fixed header text cutting off on mobile */
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+    body {
+        padding-top: 110px; /* Gives extra space since navbar gets taller on mobile */
     }
 }
