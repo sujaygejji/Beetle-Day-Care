@@ -551,14 +551,18 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none; /* Can be paired with a mobile hamburger toggle script */
+
+@media (max-width: 992px) {
+    .about-grid {
+        flex-direction: column !important; /* Stacks vertically on smaller screens */
+        text-align: center;
     }
-    .hero-content h1 {
-        font-size: 36px;
+    .about-content {
+        flex: 0 0 100%;
+        text-align: center;
     }
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .about-image-wrapper {
+        flex: 0 0 100%;
+        margin-top: 30px;
     }
 }
