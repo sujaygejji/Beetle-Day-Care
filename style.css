@@ -13,7 +13,7 @@ body {
     color: #102A43;
     background-color: #FFFFFF;
     line-height: 1.6;
-    padding-top: 80px;
+    padding-top: 100px; /* Gives space for the fixed header */
 }
 
 h1, h2, h3 {
@@ -28,25 +28,25 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   2. FIXED HEADER & NAVIGATION (Clean Premium Look)
+   2. FIXED HEADER & NAVIGATION
    ========================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    /* Standard Modern Look: Pure crisp white with a tiny bit of glass-like transparency */
     background-color: rgba(255, 255, 255, 0.95); 
-    backdrop-filter: blur(8px); /* Subtle modern blur effect */
-    box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05); /* Softer, elegant shadow */
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05);
     z-index: 1000;
     border-bottom: 1px solid rgba(16, 42, 67, 0.04);
 }
 
+/* Base flex container for the desktop layout */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 14px 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,30 +59,35 @@ h1, h2, h3 {
     gap: 12px;
 }
 
-.logo-img {
-    height: 48px;
+/* Keeps the header logo perfectly sized */
+.logo-img, .logo-area img {
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
 
 .brand-name {
     font-family: 'Fredoka', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     color: #102A43;
+    line-height: 1.2;
 }
 
 .nav-menu {
     display: flex;
-    gap: 24px;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #0F172A; 
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .nav-menu a:hover {
@@ -90,7 +95,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   3. HERO SECTION (Pure White)
+   3. HERO SECTION
    ========================================== */
 .hero-section {
     background-color: #FFFFFF;
@@ -208,7 +213,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   4. ABOUT SECTION (Soft Cream Color)
+   4. ABOUT SECTION
    ========================================== */
 .about-section {
     padding: 80px 0;
@@ -279,7 +284,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   5. PROGRAMS SECTION (Light Blue-Gray Color)
+   5. PROGRAMS SECTION
    ========================================== */
 .program-section {
     background-color: #F0F4F8; 
@@ -314,7 +319,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   6. GALLERY SECTION (Reduced Photo Sizes)
+   6. GALLERY SECTION
    ========================================== */
 .gallery-section {
     padding: 40px 20px; 
@@ -349,11 +354,12 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   7. CONTACT SECTION (Fixed Highlight Bar Layout)
+   7. CONTACT SECTION (Handles all HTML variations safely)
    ========================================== */
 .contact-section {
     background-color: #F5EFEB; 
     text-align: center;
+    padding: 60px 20px;
 }
 
 .contact-section h2 {
@@ -361,66 +367,56 @@ h1, h2, h3 {
     margin-bottom: 30px;
 }
 
-.contact-highlight-box {
+/* Targets your current container classes safely from your screenshot */
+.contact-highlight-box, .contact-strip {
     position: relative;
-    background-color: #102A43; 
+    background-color: #102A43 !important; 
     padding: 30px 40px;
     border-radius: 24px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
     box-shadow: 0 12px 30px rgba(16, 42, 67, 0.15);
     border: 2px solid #D97745; 
-    display: block;
-    width: 100%;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-tag-badge {
-    position: absolute;
-    top: -14px;
-    left: 40px;
-    background-color: #D97745;
-    color: #FFFFFF;
-    font-family: 'Fredoka', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 4px 16px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(217, 119, 69, 0.3);
-}
-
-.contact-strip-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
     width: 100%;
+    text-align: left;
+}
+
+/* Handles layout text inside the block */
+.contact-strip-inner, .contact-strip {
+    color: #FFFFFF !important;
 }
 
 .strip-item {
     font-size: 15px;
     font-weight: 700;
-    color: #FFFFFF; 
+    color: #FFFFFF !important; 
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.strip-item i {
-    color: #FF9B6A; 
+/* Links inside contact section */
+.strip-item a, .contact-strip a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+.strip-item i, .contact-strip i {
+    color: #FF9B6A !important; 
     font-size: 18px;
 }
 
-/* Forces everything inside this element to stack vertically on all devices */
+/* Aligns directions button beautifully next to or under address */
 .address-item {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .address-text-row {
@@ -429,34 +425,34 @@ h1, h2, h3 {
     gap: 10px;
 }
 
-.button-row {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.inline-map-btn {
-    display: inline-block;
-    background-color: #2B6CB0;
-    color: #FFFFFF;
+.inline-map-btn, .contact-strip .btn-primary, .contact-section .btn-primary {
+    background-color: #2B6CB0 !important;
+    color: #FFFFFF !important;
     text-decoration: none;
     padding: 8px 20px;
     border-radius: 30px;
     font-weight: 700;
     font-size: 13px;
     white-space: nowrap;
-    margin-left: 28px; /* Indents the button beautifully below the text */
     box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
     transition: background-color 0.2s ease, transform 0.2s ease;
+    border: none;
 }
 
 .inline-map-btn:hover {
-    background-color: #1A4976;
+    background-color: #1A4976 !important;
     transform: translateY(-2px);
 }
 
+/* Sub-label configuration text style override */
+.contact-section p {
+    color: #627D98;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
 /* ==========================================
-   8. FORM INQUIRY SECTION (Soft Cream Color)
+   8. FORM INQUIRY SECTION
    ========================================== */
 .form-section {
     background-color: #FAF6F0; 
@@ -513,14 +509,32 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   9. FOOTER
+   9. FOOTER & FOOTER LOGO FIX
    ========================================== */
 footer {
     background-color: #102A43;
     color: #BCCCDC;
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
     font-size: 14px;
+}
+
+/* Prevents the giant logo problem seen in your footer screenshot */
+footer img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+footer a {
+    color: #BCCCDC;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #FFFFFF;
 }
 
 /* ==========================================
@@ -541,77 +555,64 @@ footer {
         flex: 0 0 100%;
     }
     .gallery-grid {
-        grid-template-columns: repeat(4, 1fr); /* Fits 4 compact photos per row on tablets */
+        grid-template-columns: repeat(4, 1fr);
     }
-    .contact-highlight-box {
-        padding: 35px 24px 24px 24px;
-    }
-    .contact-strip-inner {
-        justify-content: center;
-        gap: 24px;
+    .contact-highlight-box, .contact-strip {
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
     }
     .address-item {
+        flex-direction: column;
         align-items: center;
-    }
-    .button-row {
-        justify-content: center;
-    }
-    .inline-map-btn {
-        margin-left: 0;
     }
 }
 
 @media (max-width: 768px) {
     body {
-        padding-top: 115px;
+        padding-top: 140px; /* Gives more fallback spacing on small screens */
     }
+    
+    /* Corrects mobile header layout from stack to crisp neat alignment */
     .nav-container {
         flex-direction: column;
-        gap: 10px;
-        padding: 8px;
+        gap: 12px;
+        padding: 12px 10px;
     }
+    
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 14px;
     }
+    
     .nav-menu a {
         font-size: 14px;
     }
+    
     .hero-content h1 {
         font-size: 32px;
     }
+    
     .highlight-bar {
         flex-direction: column;
         gap: 10px;
     }
+    
     .about-features, .form-grid-2 {
         grid-template-columns: 1fr; 
     }
+    
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 neat small photos across mobile */
+        grid-template-columns: repeat(3, 1fr);
         gap: 8px;
     }
-    .contact-highlight-box {
-        text-align: center;
-        border-radius: 20px;
-    }
-    .contact-tag-badge {
-        left: 50%;
-        transform: translateX(-50%); 
-    }
-    .contact-strip-inner {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .strip-item {
-        flex-direction: column;
-        gap: 6px;
-        text-align: center;
-    }
+
     .address-text-row {
         flex-direction: column;
         gap: 6px;
+        text-align: center;
     }
 }
