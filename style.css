@@ -344,5 +344,24 @@ footer{
 .hero-tagline{
     font-size:24px;
 }
+    @media(max-width:900px){
+
+.hero-container{
+    flex-direction:column;
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:48px;
+}
+
+.hero-tagline{
+    font-size:24px;
+}
+
+}
 
 }
