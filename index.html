@@ -12,12 +12,10 @@
 </head>
 <body>
 
-    <!-- HEADER & NAVBAR -->
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="logo-area">
                 <img src="logo.png" alt="Beetle Day Care Logo" class="logo-img">
-                <!-- Wrapper to stack the title and the tiny location cleanly -->
                 <div class="brand-text-wrapper" style="display: flex; flex-direction: column; justify-content: center;">
                     <span class="brand-name" style="line-height: 1.2;">Beetle Day Care</span>
                     <span class="brand-location" style="font-size: 11px; color: #627D98; font-weight: 600; font-family: 'Quicksand', sans-serif; margin-top: 2px;">
@@ -25,6 +23,11 @@
                     </span>
                 </div>
             </a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation" style="display: none;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
             <nav class="nav-menu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -35,10 +38,8 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Background: Pure White) -->
     <section id="home" class="hero-section">
         <div class="hero-container">
-            <!-- LEFT CONTENT -->
             <div class="hero-content">
                 <span class="hero-badge">
                     <i class="fa-solid fa-location-dot" style="font-size: 11px; margin-right: 4px;"></i> 
@@ -55,26 +56,21 @@
                     <a href="#contact" class="btn-primary">Contact Us</a>
                     <a href="#programs" class="btn-secondary">Our Programs</a>
                 </div>
-                <!-- Highlight Bar fix for horizontal single-line viewing -->
                 <div class="highlight-bar">
                     <span><strong>Licensed</strong> — State of Minnesota</span>
                     <span><strong>25 Years</strong> — Teaching Experience</span>
                     <span><strong>Infants</strong> — & Toddlers</span>
                 </div>
             </div>
-            <!-- RIGHT IMAGE -->
             <div class="hero-image">
                 <img src="hero.jpg" alt="Beetle Day Care Classroom Setup">
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION (Background: Soft Cream Shift) -->
-   <!-- ABOUT SECTION -->
     <section id="about" class="about-section">
         <div class="section-container">
             <div class="about-grid">
-                <!-- Left Column: Content Text -->
                 <div class="about-content">
                     <span class="section-badge">ABOUT US</span>
                     <h2 class="about-tagline">A Home Away From Home</h2>
@@ -85,7 +81,6 @@
                         That's our cherished goal. We work closely with each and every parent to attain such a goal.
                     </p>
                     
-                    <!-- Feature Highlights Row -->
                     <div class="about-features">
                         <div class="feature-item">
                             <h4>Child-Friendly Learning Environment</h4>
@@ -98,16 +93,13 @@
                     </div>
                 </div>
                 
-                <!-- Right Column: Vector Illustration Picture -->
                 <div class="about-image-wrapper">
-                    <!-- If you have the image saved locally as about-illustration.png -->
                     <img src="parents.jpg" alt="Cartoon child playing with blocks on a rug illustration" class="about-illustration">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROGRAMS SECTION (Background: Pure White Shift) -->
     <section id="programs" class="program-section">
         <div class="section-container">
             <h2>Our Programs</h2>
@@ -131,43 +123,45 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION (Background: Light Pastel Beige Shift + Cartoon Images) -->
-   <section class="gallery-section">
-    <div class="gallery-container">
-        <h2 class="gallery-title">Our Fun Activities</h2>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="gallary1.jpeg" alt="Alphabet blocks">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary2.jpeg" alt="Lego play sign">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary3.jpeg" alt="Emoji face blocks">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary4.jpeg" alt="1 2 3 counting blocks">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary5.jpeg" alt="Child stacking animal blocks">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary6.jpeg" alt="Paper hand bouquet craft">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary7.jpeg" alt="Child painting with watercolors">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary8.jpeg" alt="Origami paper boats">
-            </div>
-            <div class="gallery-item">
-                <img src="gallary9.jpeg" alt="Sunflower crayon art canvas">
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-container">
+            <h2 class="gallery-title">Our Fun Activities</h2>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="gallary1.jpeg" alt="Alphabet blocks">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary2.jpeg" alt="Lego play sign">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary3.jpeg" alt="Emoji face blocks">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary4.jpeg" alt="1 2 3 counting blocks">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary5.jpeg" alt="Child stacking animal blocks">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary6.jpeg" alt="Paper hand bouquet craft">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary7.jpeg" alt="Child painting with watercolors">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary8.jpeg" alt="Origami paper boats">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary9.jpeg" alt="Sunflower crayon art canvas">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallary10.jpeg" alt="Additional fun daycare activity">
+                </div>
             </div>
         </div>
-    </div>
-</section>
-    <!-- CONTACT SECTION (Background: Pure White Shift) -->
+    </section>
+
     <section id="contact" class="contact-section">
         <div class="section-container">
             <h2>Contact Us</h2>
@@ -185,7 +179,6 @@
         </div>
     </section>
 
-    <!-- INQUIRY FORM SECTION (Background: Soft Cream Shift) -->
     <section class="form-section">
         <div class="section-container">
             <h2>Send an Inquiry</h2>
@@ -198,7 +191,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>© 2026 Beetle Day Care | Minneapolis, Minnesota</p>
     </footer>
