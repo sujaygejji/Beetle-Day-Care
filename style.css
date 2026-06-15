@@ -219,99 +219,106 @@ h1, h2, h3 {
 /* ==========================================
    4. ABOUT SECTION (Soft Cream Color Shift)
    ========================================== */
-/* About Us Section Custom Styling */
+/* ==========================================
+   4. ABOUT SECTION (Robust Side-by-Side Layout)
+   ========================================== */
 .about-section {
-    padding: 60px 0;
+    padding: 80px 0;
     background-color: #Faf8f5; /* Soft background tint */
+    width: 100%;
 }
 
-/* Changed from a strict 2-column grid to a flexible vertical flexbox layout */
+/* Force a stable flex layout that won't let columns collapse */
 .about-grid {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center; /* Centers all content for a balanced look */
+    gap: 50px;
+    width: 100%;
 }
 
+/* Give the text side plenty of room (60% of the screen width) */
 .about-content {
-    width: 100%;
-    max-width: 800px; /* Prevents text from becoming too wide to read */
-    margin: 0 auto;
+    flex: 0 0 55%; 
+    min-width: 320px; /* Prevents it from crushing on smaller screens */
+    text-align: left;
 }
 
 .section-badge {
     font-family: 'Quicksand', sans-serif;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     color: #627D98;
     text-transform: uppercase;
     display: block;
     margin-bottom: 12px;
 }
 
+/* Explicitly force the tagline to span full horizontal lines */
 .about-tagline {
     font-family: 'Fredoka', sans-serif;
-    font-size: 3rem; /* Enlarged for a premium, bold feel */
+    font-size: 2.8rem;
     color: #102A43;
     margin-top: 0;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
+    white-space: normal; /* Allows normal sentence layout */
+    display: block;
+    width: 100%; /* Spans the entire width of the content column */
 }
 
 .about-text {
     font-family: 'Quicksand', sans-serif;
     color: #486581;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 40px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-/* Feature Grid Cards at Bottom */
+/* Feature Grid Cards */
 .about-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 20px;
     background: #ffffff;
-    padding: 30px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(16, 42, 67, 0.03);
-    text-align: left; /* Keeps the cards easy to read */
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.02);
 }
 
 .feature-item h4 {
     font-family: 'Fredoka', sans-serif;
     color: #102A43;
     margin-bottom: 8px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .feature-item p {
     font-family: 'Quicksand', sans-serif;
     color: #627D98;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
     margin: 0;
 }
 
-/* Rounded Vector Illustration Layout */
+/* Give the image wrapper the remaining 40% of space */
 .about-image-wrapper {
-    width: 100%;
-    max-width: 500px;
+    flex: 0 0 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 .about-illustration {
     width: 100%;
+    max-width: 450px;
     height: auto;
-    border-radius: 50%; /* Re-creates the beautiful circular display look */
+    border-radius: 50%;
     border: 15px solid #ffffff;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 /* ==========================================
    5. PROGRAMS SECTION (Pure White Shift)
