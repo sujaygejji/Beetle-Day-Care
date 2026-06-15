@@ -3,146 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beetle Day Care | Minneapolis</title>
+    <title>8051 Railway Gate Controller Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --primary: #007bff;
+            --danger: #dc3545;
+            --success: #28a745;
+        }
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #1a202c;
+        }
+
+        header p {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Responsive Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 30px;
+        }
+
+        /* Uniform Gallery Card Styling */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Equal Sized Visual Indicators */
+        .status-indicator {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #4a5568;
+            transition: all 0.3s ease;
+            border: 4px solid #cbd5e0;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: #2d3748;
+        }
+
+        /* Control Panel Styles */
+        .controls-card {
+            grid-column: 1 / -1;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            flex: 1;
+            min-width: 140px;
+            max-width: 200px;
+        }
+
+        .btn-arrives { background-color: var(--danger); color: white; }
+        .btn-leaves { background-color: var(--success); color: white; }
+        .btn-reset { background-color: #6c757d; color: white; }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Dynamic State Classes */
+        .active-buzzer {
+            background-color: #fff5f5;
+            border-color: var(--danger);
+            color: var(--danger);
+            box-shadow: 0 0 15px rgba(220, 53, 69, 0.2);
+            animation: pulse 1s infinite alternate;
+        }
+
+        .active-gate-close {
+            background-color: #fffaf0;
+            border-color: #dd6b20;
+            color: #dd6b20;
+        }
+
+        .active-gate-open {
+            background-color: #f0fff4;
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo-area">
-                <img src="logo.png" alt="Beetle Day Care Logo" class="logo-img">
-                <span class="brand-name">Beetle Day Care</span>
-            </a>
-            <nav class="nav-menu">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#programs">Programs</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+    <header>
+        <h1>Smart Railway Gate Control System</h1>
+        <p>Microcontroller 8051 Simulation Dashboard</p>
     </header>
 
-    <section id="home" class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-badge">Licensed Infant & Toddler Care in Minneapolis</span>
-                <h1>Beetle Day Care</h1>
-                <h2 class="hero-tagline">Home of Happy, Healthy Kids</h2>
-                <p>
-                    We provide the highest standards for children to play, learn, and rest. 
-                    We are State of Minnesota licensed for infants and toddlers. 
-                    Our manager, Sheila Jayaswal, brings 25 years of teaching experience to this daycare.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Contact Us</a>
-                    <a href="#programs" class="btn-secondary">Our Programs</a>
-                </div>
-                <div class="highlight-bar">
-                    <span><strong>Licensed</strong> | State of Minnesota</span>
-                    <span><strong>25 Years</strong> | Teaching Experience</span>
-                    <span><strong>Infants</strong> | & Toddlers</span>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="hero.jpg" alt="Beetle Day Care Classroom">
-            </div>
+    <div class="dashboard-grid">
+        <div class="card">
+            <h3>Track Sensors (P0)</h3>
+            <div id="sensorStatus" class="status-indicator">IDLE STATE</div>
+            <p>Monitoring tracks...</p>
         </div>
-    </section>
 
-    <section id="about" class="about-section">
-        <div class="section-container">
-            <div class="about-grid">
-                <div>
-                    <img src="parents.jpg" alt="Parents and Child playing" class="section-image">
-                </div>
-                <div>
-                    <h2>About Us</h2>
-                    <p>
-                        At Beetle Day Care, we provide a warm, safe and nurturing environment 
-                        where children can learn, grow and thrive. 
-                        Our focus is on creating positive experiences through play, 
-                        storytelling, creative activities and structured learning.
-                    </p>
-                </div>
-            </div>
+        <div class="card">
+            <h3>Buzzer Alarm (P1^0)</h3>
+            <div id="buzzerStatus" class="status-indicator">OFF</div>
+            <p>Audio Alerts</p>
         </div>
-    </section>
 
-    <section id="programs" class="program-section">
-        <div class="section-container">
-            <h2>Our Programs</h2>
-            <div class="program-grid">
-                <div class="program-card">
-                    <img src="about.jpg" alt="Child playing with Building Blocks">
-                    <h3>Creative Play</h3>
-                    <p>Hands-on activities designed to encourage curiosity and imagination.</p>
-                </div>
-                <div class="program-card">
-                    <img src="reading.jpg" alt="Children enjoying Story Time">
-                    <h3>Story Time</h3>
-                    <p>Interactive reading sessions that improve language and communication skills.</p>
-                </div>
-                <div class="program-card">
-                    <img src="learning.jpg" alt="Children Learning Together in a group">
-                    <h3>Group Learning</h3>
-                    <p>Early childhood education through engaging group activities and teamwork.</p>
-                </div>
-            </div>
+        <div class="card">
+            <h3>Gate Mechanism (P2)</h3>
+            <div id="gateStatus" class="status-indicator">OPENED</div>
+            <p>Motor Control Status</p>
         </div>
-    </section>
+    </div>
 
-    <section id="gallery" class="gallery-section">
-        <div class="section-container">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <img src="hero.jpg" alt="Day care classroom layout">
-                <img src="about.jpg" alt="Children playing with toys">
-                <img src="reading.jpg" alt="Teacher reading a book to kids">
-                <img src="learning.jpg" alt="Kids working on a crafts project">
-                <img src="parents.jpg" alt="Happy family at the day care center">
-            </div>
+    <div class="controls-card">
+        <h3>Simulation Input Controls</h3>
+        <div class="btn-group">
+            <button class="btn-arrives" onclick="triggerArrives()">Train Arrives</button>
+            <button class="btn-leaves" onclick="triggerLeaves()">Train Leaves</button>
+            <button class="btn-reset" onclick="triggerReset()">Reset System</button>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="contact-section">
-        <div class="section-container">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <p><i class="fa-solid fa-envelope"></i> sheilajayaswal727@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> (612) 450-3180</p>
-                <p><i class="fa-solid fa-location-dot"></i> 3541 43rd Avenue South, Minneapolis, MN 55406</p>
-            </div>
+    <script>
+        const sensorDiv = document.getElementById('sensorStatus');
+        const buzzerDiv = document.getElementById('buzzerStatus');
+        const gateDiv = document.getElementById('gateStatus');
+
+        function triggerArrives() {
+            // Update Sensor Layout
+            sensorDiv.innerText = "TRAIN DETECTED";
+            sensorDiv.className = "status-indicator active-buzzer";
+
+            // Update Buzzer Output
+            buzzerDiv.innerText = "BUZZING";
+            buzzerDiv.className = "status-indicator active-buzzer";
+
+            // Update Gate Motor Action
+            gateDiv.innerText = "CLOSING...";
+            gateDiv.className = "status-indicator active-gate-close";
+
+            // Simulate the 8051 Delay loop turning motor off after gate closes
+            setTimeout(() => {
+                if(sensorDiv.innerText === "TRAIN DETECTED") {
+                    gateDiv.innerText = "CLOSED";
+                    gateDiv.className = "status-indicator active-gate-close";
+                }
+            }, 1500);
+        }
+
+        function triggerLeaves() {
+            sensorDiv.innerText = "TRAIN CLEARING";
+            sensorDiv.className = "status-indicator active-gate-open";
+
+            buzzerDiv.innerText = "OFF";
+            buzzerDiv.className = "status-indicator";
+
+            gateDiv.innerText = "OPENING...";
+            gateDiv.className = "status-indicator active-gate-open";
+
+            setTimeout(() => {
+                if(sensorDiv.innerText === "TRAIN CLEARING") {
+                    gateDiv.innerText = "OPENED";
+                    gateDiv.className = "status-indicator";
+                    sensorDiv.innerText = "IDLE STATE";
+                    sensorDiv.className = "status-indicator";
+                }
+            }, 1500);
+        }
+
+        function triggerReset() {
+            sensorDiv.innerText = "IDLE STATE";
+            sensorDiv.className = "status-indicator";
             
-            <a href="https://maps.google.com" target="_blank" class="map-btn">Get Directions</a>
-            <br><br>
+            buzzerDiv.innerText = "OFF";
+            buzzerDiv.className = "status-indicator";
             
-            <iframe src="https://www.google.com/maps/embed" width="100%" height="350" style="border:0;border-radius:20px;" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <section class="form-section">
-        <div class="section-container">
-            <h2>Send an Inquiry</h2>
-            <form action="https://formsubmit.co/sheilajayaswal727@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Tell us about your child..." required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Beetle Day Care | Minneapolis, Minnesota</p>
-    </footer>
-
-    <script src="script.js"></script>
+            gateDiv.innerText = "OPENED";
+            gateDiv.className = "status-indicator";
+        }
+    </script>
 </body>
 </html>
