@@ -3,52 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beetle Daycare | Quality Childcare</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <title>Beetle Daycare</title>
     <style>
-        body { font-family: 'Quicksand', sans-serif; margin: 0; color: #333; line-height: 1.6; }
-        header { background: #e0f7fa; padding: 40px 20px; text-align: center; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .card { border: 2px solid #b2ebf2; border-radius: 15px; padding: 20px; margin-bottom: 20px; background: #fff; }
-        h1, h2 { color: #00838f; }
-        .btn { background: #00838f; color: white; padding: 10px 20px; text-decoration: none; border-radius: 25px; display: inline-block; }
-        .stats { display: flex; justify-content: space-around; background: #f9f9f9; padding: 20px; border-radius: 15px; }
-        .stat-item { text-align: center; font-weight: bold; }
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #e8f5e9;
+            --dark: #1b5e20;
+            --text: #333333;
+            --light: #f9f9f9;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background-color: var(--dark);
+            padding: 0.8rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .pricing-card {
+            text-align: center;
+            background-color: var(--primary-light);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 1rem 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: var(--dark);
+        }
+
+        .resource-list {
+            list-style: none;
+        }
+
+        .resource-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .resource-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resource-list a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #222222;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #a5d6a7;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            nav a { display: block; margin: 0.5rem 0; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Beetle Daycare</h1>
-    <p>25 Years of Loving Care & Professional Excellence</p>
-</header>
+    <header>
+        <h1>Beetle Daycare</h1>
+        <p>A Safe, Nurturing, and Creative Environment for Your Little Ones</p>
+    </header>
 
-<div class="container">
-    <div class="card">
-        <h2>About Our Daycare</h2>
-        <ul>
-            <li><strong>Licensed Provider:</strong> Fully certified in the state of Minnesota.</li>
-            <li><strong>Experienced Manager:</strong> Over 25 years in child development.</li>
-            <li><strong>Safe Environment:</strong> A warm, home-like setting for infants and toddlers.</li>
-        </ul>
-    </div>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#rates">Rates & Hours</a>
+        <a href="#firstday">First Day Info</a>
+        <a href="#resources">Resources</a>
+        <a href="#apply">Apply Now</a>
+    </nav>
 
-    <div class="card">
-        <h2>Operating Hours</h2>
-        <p>Monday – Friday: 7:00 AM to 5:30 PM</p>
-        <p><em>Contact us for availability and enrollment details.</em></p>
-    </div>
+    <div class="container">
 
-    <div class="stats">
-        <div class="stat-item">25+<br>Years Experience</div>
-        <div class="stat-item">100%<br>Licensed</div>
-        <div class="stat-item">5/5<br>Parent Rating</div>
-    </div>
+        <!-- About Section -->
+        <section id="about">
+            <h2>Why Choose Beetle Daycare?</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto;">
+                We focus on early childhood development through creative play, interactive social activities, and structured learning schedules. Our facility is designed to provide complete safety and peace of mind for parents.
+            </p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Interactive Classrooms</h3>
+                    <p>Equipped with modern learning materials, creative toys, and age-appropriate educational tools.</p>
+                </div>
+                <div class="card">
+                    <h3>Safe Environment</h3>
+                    <p>Secured premises with dedicated indoor and outdoor play spaces designed specifically for child safety.</p>
+                </div>
+                <div class="card">
+                    <h3>Clean & Hygienic</h3>
+                    <p>We maintain strict, continuous cleaning protocols to ensure a healthy environment for all children.</p>
+                </div>
+            </div>
+        </section>
 
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="tel:6124503180" class="btn">Call Us: (612) 450-3180</a>
-    </div>
-</div>
+        <!-- Rates & Hours Section -->
+        <section id="rates">
+            <h2>Rates & Hours of Operation</h2>
+            <p style="text-align: center; margin-bottom: 2rem;"><strong>Operating Hours:</strong> Monday – Friday | 7:00 AM – 6:00 PM</p>
+            
+            <div class="grid">
+                <div class="pricing-card">
+                    <h3>Infant Rate</h3>
+                    <div class="price">$350 <span>/ week</span></div>
+                    <p>Full-time specialized care for your youngest family members.</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Toddler Rate</h3>
+                    <div class="price">$310 <span>/ week</span></div>
+                    <p>Engaging learning plans and social growth tracks for active toddlers.</p>
+                </div>
+            </div>
+        </section>
 
-</body>
-</html>
+        <!-- First Day Prep Section (Cleaned Packing List) -->
+        <section id="firstday">
+            <h2>Preparing for Your Child's First Day</h2>
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <p>To ensure a smooth transition, our team will provide a personalized onboarding checklist tailored specifically to your child’s age group upon enrollment. We handle the daily essentials so you can have complete peace of mind.</p>
+                <br>
+                <p>If your child requires a pacifier or specific infant formula during their stay, you are welcome to label and discuss these requirements directly with their assigned classroom educator.</p>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2>Useful Resources for Parents</h2>
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <ul class="resource-list">
+                    <li>🔹 <a href="https://www.comozooconservatory.org/" target="_blank">Como Zoo & Conservatory</a> - Great family weekend outings</li>
+                    <li>🔹 <a href="https://www.minnesotachildrensmuseum.org/" target="_blank">Minnesota Children's Museum</a> - Interactive play ideas</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Apply Form Section -->
+        <section id="apply">
+            <h2>Enrollment Application</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <p style="text-align: center; margin-bottom: 1.5rem;">Send your application directly to our office. We will get back to you within 24–48 hours.</p>
+                
+                <form action="https://formsubmit.co/your-email-here@domain.com" method="POST">
+                    <div class="form-group">
+                        <label for="parentName">Parent/Guardian Full Name</label>
+                        <input type="text" id="parentName" name="Parent_Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">PhoneNormally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
