@@ -1,44 +1,43 @@
-// Smooth scrolling for menu links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+// Wait until the entire web page is loaded
+document.addEventListener("DOMContentLoaded", function () {
 
-// Fade-in animation on scroll
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-document.querySelectorAll('.hero-content, .hero-image, .about-grid, .program-card, .gallery-grid img, .contact-info, .form-section form').forEach((el) => {
-    el.classList.add('hidden');
-    observer.observe(el);
-});
-
-// Navbar shadow effect safely
-window.addEventListener('scroll', () => {
+    // 1. SMOOTH SCROLLING WITH OFFSET FOR THE FIXED NAVBAR
+    const navLinks = document.querySelectorAll('.nav-menu a, .hero-buttons a');
     const navbar = document.querySelector('.navbar');
-    if(!navbar) return;
-    
-    if(window.scrollY > 50){
-        navbar.style.boxShadow = '0 10px 30px rgba(16, 42, 67, 0.1)';
-    } else {
-        navbar.style.boxShadow = '0 4px 20px rgba(16, 42, 67, 0.06)';
-    }
-});
 
-window.addEventListener('load', () => {
-    console.log('Beetle Day Care website loaded successfully');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            
+            // Only apply to internal section links
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+
+                if (targetSection) {
+                    // Calculate the exact height of your navbar dynamically
+                    const navbarHeight = navbar.offsetHeight;
+                    const sectionPosition = targetSection.offsetTop;
+                    
+                    // Scroll to the exact position minus the navbar height
+                    window.scrollTo({
+                        top: sectionPosition - navbarHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // 2. NAVBAR SHADOW EFFECT ON SCROLL
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 20) {
+            navbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+            navbar.style.backgroundColor = "#EBF1F7"; // Shifts a tiny bit darker when scrolling
+        } else {
+            navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.05)";
+            navbar.style.backgroundColor = "#F0F4F8"; // Returns to standard header color
+        }
+    });
+
 });
