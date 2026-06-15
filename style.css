@@ -219,37 +219,87 @@ h1, h2, h3 {
 /* ==========================================
    4. ABOUT SECTION (Soft Cream Color Shift)
    ========================================== */
+/* About Us Section Custom Styling */
 .about-section {
-    background-color: #FFFDF9; /* Creative subtle cream shift */
+    padding: 60px 0;
+    background-color: #Faf8f5; /* Soft background tint */
 }
 
 .about-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     align-items: center;
-    gap: 60px;
 }
 
-.about-grid > div {
-    flex: 1;
+.section-badge {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #627D98;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
 }
 
-.section-image {
-    width: 100%;
-    height: auto;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.about-section h2 {
-    font-size: 36px;
+.about-tagline {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.5rem;
+    color: #102A43;
+    margin-top: 0;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.about-section p {
-    font-size: 17px;
+.about-text {
+    font-family: 'Quicksand', sans-serif;
     color: #486581;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
+/* Feature Grid Cards at Bottom */
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+}
+
+.feature-item h4 {
+    font-family: 'Fredoka', sans-serif;
+    color: #102A43;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.feature-item p {
+    font-family: 'Quicksand', sans-serif;
+    color: #627D98;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Rounded Vector Illustration */
+.about-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-illustration {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Keeps it inside a circular background badge */
+    border: 15px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
 /* ==========================================
    5. PROGRAMS SECTION (Pure White Shift)
    ========================================== */
