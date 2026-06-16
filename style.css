@@ -94,7 +94,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   3. HERO SECTION
+   3. HERO SECTION (Fine-Tuned Thin Typography)
    ========================================== */
 .hero-section {
     background-color: #FFFFFF;
@@ -125,9 +125,13 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
+/* UPDATED: Clean, elegant spacing for the thin font */
 .hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.4; 
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
 }
 
 .hero-tagline {
@@ -175,19 +179,50 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+/* UPDATED: Setup wrapper to allow a CSS overlay board on the image wall */
 .hero-image {
     flex: 1;
     display: flex;
     justify-content: center;
+    position: relative; 
 }
 
-/* Added a beautiful, soft floating animation to the hero photo */
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 .hero-image img {
     max-width: 100%;
     height: auto;
     border-radius: 32px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.06);
     animation: gentleFloat 6s ease-in-out infinite;
+    display: block;
+}
+
+/* NEW FEATURE: CSS Signboard layered over the wall */
+.wall-signboard {
+    position: absolute;
+    top: 18%;                /* Positions it on the upper wall area */
+    left: 28%;               /* Centers it over the open wall space */
+    background: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(16, 42, 67, 0.1);
+    border: 2px solid #E4EBF1;
+    transform: rotate(-1deg); /* Slight angle matches hand-drawn art style */
+    z-index: 10;
+    pointer-events: none;    /* Makes sure it doesn't break clicks */
+    animation: gentleFloat 6s ease-in-out infinite; /* Follows illustration float */
+}
+
+.wall-signboard span {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #102A43;
+    white-space: nowrap;
 }
 
 .highlight-bar {
@@ -232,7 +267,6 @@ h1, h2, h3 {
     flex: 0 0 55%; 
 }
 
-/* "About Us" Title - Bigger and Bold */
 .section-badge {
     font-family: 'Fredoka', sans-serif;
     font-size: 36px;
@@ -243,7 +277,6 @@ h1, h2, h3 {
     letter-spacing: normal;
 }
 
-/* "A Home Away From Home" Tagline - Smaller and Softer */
 .about-tagline {
     font-size: 20px;
     font-weight: 500;
@@ -281,7 +314,6 @@ h1, h2, h3 {
     flex: 0 0 40%;
 }
 
-/* Added a matching soft floating animation here too */
 .about-illustration {
     width: 100%;
     max-width: 420px;
@@ -290,7 +322,7 @@ h1, h2, h3 {
     border: 12px solid #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     animation: gentleFloat 6s ease-in-out infinite;
-    animation-delay: 1s; /* offsets the rhythm for a natural feel */
+    animation-delay: 1s; 
 }
 
 /* ==========================================
@@ -364,7 +396,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   7. CONTACT SECTION (Left-Aligned Layout Fix Resolved)
+   7. CONTACT SECTION
    ========================================== */
 .contact-section {
     background-color: #F5EFEB; 
@@ -397,7 +429,6 @@ h1, h2, h3 {
     text-align: left !important;
 }
 
-/* BROKEN NESTED RULES PULLED OUT AND FILED CORRECTLY HERE */
 .contact-strip-inner {
     display: flex !important;
     flex-direction: column !important;
@@ -589,6 +620,9 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
     }
+    .wall-signboard {
+        display: none; /* Hides sign on mobile viewports to prevent layout overlap */
+    }
 }
 
 @media (max-width: 768px) {
@@ -632,14 +666,12 @@ footer a:hover {
 /* ==========================================
    11. NEW SMOOTH ANIMATIONS & KEYFRAMES
    ========================================== */
-/* Smooth, subtle float up and down for photos */
 @keyframes gentleFloat {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
 
-/* Smooth, subtle pulsing look for notification badges */
 @keyframes gentlePulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.03); }
