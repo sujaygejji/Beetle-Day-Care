@@ -19,7 +19,7 @@ body {
 h1, h2, h3 {
     font-family: 'Fredoka', sans-serif;
     color: #102A43;
-    font-weight: 600; /* This makes the font clean, crisp, and much thinner */
+    font-weight: 900; /* This makes the font clean, crisp, and much thinner */
 }
 
 .section-container {
