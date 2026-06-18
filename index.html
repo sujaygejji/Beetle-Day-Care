@@ -158,7 +158,7 @@
     </section> 
 
     <!-- 5. CONTACT SECTION --> 
-    <section id="contact" class="contact-section"> 
+   <!-- <section id="contact" class="contact-section"> 
         <div class="section-container"> 
             <h2>Contact Us</h2> 
             <div class="contact-highlight-box"> 
@@ -200,6 +200,124 @@
         <button type="submit" class="btn-submit">Send Message</button>
     </form>
 </div>
+            
+            <!-- EMBEDDED INTERACTIVE GOOGLE MAP MAPPER --> 
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2825.263884872322!2d-93.2132332!3d44.9382902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32bee1bf88d7d%3A0x280e22ef7a6ccae4!2s3541%2043rd%20Ave%20S%2C%20Minneapolis%2C%20MN%2055406%2C%20USA!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>  --> 
+
+    <!-- 5. CONTACT SECTION --> 
+    <section id="contact" class="contact-section"> 
+        <div class="section-container"> 
+            <h2>Contact Us</h2> 
+            
+            <!-- Dark Blue Contact Details Box -->
+            <div class="contact-highlight-box"> 
+                <span class="contact-tag-badge">Get In Touch</span> 
+                <div class="contact-strip-inner"> 
+                    <div class="strip-item"> 
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i> 
+                        <a href="mailto:sheilajayaswal727@gmail.com">sheilajayaswal727@gmail.com</a> 
+                    </div> 
+                    <div class="strip-item"> 
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i> 
+                        <a href="tel:+16124503180">(612) 450-3180</a> 
+                    </div> 
+                    <div class="address-item"> 
+                        <div class="address-text-row"> 
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i> 
+                            <span>3541 43rd Avenue South, Minneapolis, MN 55406</span> 
+                        </div> 
+                        <div class="button-row"> 
+                            <a href="https://google.com" target="_blank" rel="noopener" class="inline-map-btn">Get Directions</a> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+            
+            <!-- INQUIRY FORM SECTION (FIXED EMBEDDED STYLES) -->
+            <style>
+                .inquiry-form-container {
+                    max-width: 650px;
+                    margin: 50px auto;
+                    padding: 0 10px;
+                    text-align: center;
+                }
+                .inquiry-form-container h3 {
+                    font-family: 'Fredoka', sans-serif;
+                    font-size: 32px;
+                    color: #102A43;
+                    margin-bottom: 25px;
+                    font-weight: 600;
+                }
+                .form-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 15px;
+                    margin-bottom: 15px;
+                }
+                .inquiry-form input, 
+                .inquiry-form textarea {
+                    width: 100%;
+                    padding: 14px 20px;
+                    border: 1px solid #E4EBF1;
+                    border-radius: 14px;
+                    font-family: 'Quicksand', sans-serif;
+                    font-size: 15px;
+                    color: #102A43;
+                    background-color: #FFFFFF;
+                    outline: none;
+                    box-sizing: border-box;
+                }
+                .inquiry-form input::placeholder, 
+                .inquiry-form textarea::placeholder {
+                    color: #A0AEC0;
+                }
+                .inquiry-form textarea {
+                    resize: none;
+                    margin-bottom: 20px;
+                }
+                .btn-submit {
+                    width: 100%;
+                    background-color: #D97745;
+                    color: white;
+                    border: none;
+                    padding: 16px;
+                    border-radius: 14px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    font-family: 'Quicksand', sans-serif;
+                    cursor: pointer;
+                    box-shadow: 0 4px 14px rgba(217, 119, 69, 0.2);
+                    transition: background 0.2s ease;
+                }
+                .btn-submit:hover {
+                    background-color: #C26132;
+                }
+                @media (max-width: 600px) {
+                    .form-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+
+            <div class="inquiry-form-container">
+                <h3>Send an Inquiry</h3>
+                <form action="#" method="POST" class="inquiry-form">
+                    <div class="form-grid">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Contact Number">
+                        <input type="text" placeholder="Child's Age (e.g., 14 Months)">
+                        <input type="text" placeholder="Desired Start Date" onfocus="(this.type='date')" onblur="(this.placeholder='Desired Start Date')">
+                        <input type="text" placeholder="Address / Postal Code">
+                    </div>
+                    <textarea placeholder="Additional notes or questions..." rows="4"></textarea>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
             
             <!-- EMBEDDED INTERACTIVE GOOGLE MAP MAPPER --> 
             <div class="map-wrapper">
