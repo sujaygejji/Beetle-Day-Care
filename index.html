@@ -506,16 +506,26 @@
 
                 <div class="split-form-container">
                     <h3>Send an Inquiry</h3>
-                    <form action="#" method="POST" class="inquiry-form">
+                   <form action="https://api.web3forms.com/submit" method="POST" class="inquiry-form">
+                       <input type="hidden" name="access_key" value="f43c1585-5557-4550-9157-436077872c08">
+
+<input type="hidden" name="subject" value="New Inquiry from Beetle Day Care Website">
+
+<input type="hidden" name="from_name" value="Beetle Day Care Website">
                         <div class="split-form-grid">
-                            <input type="text" placeholder="Your Name" required>
-                            <input type="email" placeholder="Your Email" required>
-                            <input type="tel" placeholder="Contact Number">
-                            <input type="text" placeholder="Child's Age (e.g., 14 Months)">
-                            <input type="text" placeholder="Desired Start Date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
-                            <input type="text" placeholder="Address / Postal Code">
-                        </div>
-                        <textarea placeholder="Additional notes or questions..." rows="4"></textarea>
+                            <input type="text" name="parent_name" placeholder="Your Name" required>
+                            
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="tel" name="phone" placeholder="Contact Number">
+
+<input type="text" name="child_age" placeholder="Child's Age (e.g., 14 Months)">
+
+<input type="text" name="start_date" placeholder="Desired Start Date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+
+<input type="text" name="address" placeholder="Address / Postal Code">
+                                                  </div>
+                        <textarea name="message" placeholder="Additional notes or questions..." rows="4"></textarea>
                         <button type="submit" class="btn-submit">Send Message</button>
                     </form>
                 </div>
