@@ -472,12 +472,12 @@ h1, h2, h3, .brand-main-heading {
 
 .contact-highlight-box {
     background-color: #102A43; 
-    padding: 40px;
+    padding: 25px 30px; /* Reduced from 40px to make it thinner */
     border-radius: 28px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 40px auto;
     box-shadow: 0 12px 35px rgba(16, 42, 67, 0.15);
     border: 2px solid #D97745; 
-    max-width: 650px; /* Reduced to fit the centered, stacked layout cleanly */
+    max-width: 580px; /* Reduced from 650px to make it less wide */
     position: relative;
 }
 
