@@ -683,3 +683,74 @@ footer a:hover {
     50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
+
+/* Inquiry Form Styles */
+.inquiry-form-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.inquiry-form-container h3 {
+    font-size: 28px;
+    color: #102A43;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.inquiry-form input, 
+.inquiry-form textarea {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #E4EBF1;
+    border-radius: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: #102A43;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.inquiry-form input::placeholder, 
+.inquiry-form textarea::placeholder {
+    color: #A0AEC0;
+}
+
+.inquiry-form textarea {
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #D97745;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(217, 119, 69, 0.2);
+    transition: background 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #C26132;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
