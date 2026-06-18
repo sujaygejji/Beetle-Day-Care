@@ -325,6 +325,201 @@
             </div>
         </div>
     </section> --> 
+    <section id="contact" class="contact-section"> 
+        <div class="section-container"> 
+            
+            <style>
+                .contact-layout-wrapper {
+                    display: flex;
+                    gap: 40px;
+                    align-items: flex-start;
+                    max-width: 1200px;
+                    margin: 0 auto 50px auto;
+                }
+                
+                /* Left Side: Contact Box Custom Split Tuning */
+                .split-contact-box {
+                    flex: 1;
+                    background-color: #102A43; 
+                    padding: 40px 30px;
+                    border-radius: 28px;
+                    box-shadow: 0 12px 35px rgba(16, 42, 67, 0.15);
+                    border: 2px solid #D97745; 
+                    color: #FFFFFF;
+                    height: 100%;
+                    box-sizing: border-box;
+                }
+                .split-contact-box h3 {
+                    font-family: 'Fredoka', sans-serif;
+                    font-size: 32px;
+                    color: #FFFFFF;
+                    margin-bottom: 30px;
+                    font-weight: 600;
+                    text-align: left;
+                }
+                .split-strip-inner {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                }
+                .split-strip-inner .strip-item {
+                    font-size: 16px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    justify-content: flex-start;
+                    text-align: left;
+                }
+                .split-strip-inner .strip-item a {
+                    color: #FFFFFF;
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+                }
+                .split-strip-inner .strip-item a:hover {
+                    color: #FF9B6A;
+                }
+                .split-strip-inner .strip-item i {
+                    color: #FF9B6A; 
+                    font-size: 22px;
+                    width: 24px;
+                    text-align: center;
+                }
+                .split-address-box {
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    padding-top: 24px;
+                    margin-top: 10px;
+                }
+                .split-address-box .address-text-row {
+                    display: flex;
+                    gap: 16px;
+                    align-items: flex-start;
+                    margin-bottom: 20px;
+                    text-align: left;
+                }
+
+                /* Right Side: Inquiry Form Styling */
+                .split-form-container {
+                    flex: 1.2; /* Slightly wider space allotment for input grids */
+                    background: #FFFFFF;
+                    padding: 35px;
+                    border-radius: 28px;
+                    box-shadow: 0 10px 30px rgba(16, 42, 67, 0.04);
+                    border: 1px solid #E4EBF1;
+                    box-sizing: border-box;
+                }
+                .split-form-container h3 {
+                    font-family: 'Fredoka', sans-serif;
+                    font-size: 32px;
+                    color: #102A43;
+                    margin-bottom: 25px;
+                    font-weight: 700;
+                    text-align: left;
+                }
+                .split-form-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 16px;
+                    margin-bottom: 16px;
+                }
+                .split-form-container input, 
+                .split-form-container textarea {
+                    width: 100%;
+                    padding: 14px 20px;
+                    border: 2px solid #E4EBF1;
+                    border-radius: 14px;
+                    font-family: 'Quicksand', sans-serif;
+                    font-size: 15px;
+                    color: #102A43;
+                    background-color: #FFFFFF;
+                    outline: none;
+                    box-sizing: border-box;
+                    transition: border-color 0.2s ease;
+                }
+                .split-form-container input:focus, 
+                .split-form-container textarea:focus {
+                    border-color: #D97745;
+                }
+                .split-form-container input::placeholder, 
+                .split-form-container textarea::placeholder {
+                    color: #A0AEC0;
+                }
+                .split-form-container textarea {
+                    resize: none;
+                    margin-bottom: 20px;
+                }
+
+                /* RESPONSIVE RESPONDERS */
+                @media (max-width: 992px) {
+                    .contact-layout-wrapper {
+                        flex-direction: column;
+                        gap: 30px;
+                    }
+                    .split-contact-box, .split-form-container {
+                        width: 100%;
+                        flex: none;
+                    }
+                }
+                @media (max-width: 576px) {
+                    .split-form-grid {
+                        grid-template-columns: 1fr;
+                        gap: 12px;
+                    }
+                    .split-form-container {
+                        padding: 20px;
+                    }
+                }
+            </style>
+
+            <div class="contact-layout-wrapper">
+                
+                <div class="split-contact-box">
+                    <h3>Contact Us</h3>
+                    <div class="split-strip-inner">
+                        <div class="strip-item">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:sheilajayaswal727@gmail.com">sheilajayaswal727@gmail.com</a>
+                        </div>
+                        <div class="strip-item">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+16124503180">(612) 450-3180</a>
+                        </div>
+                        <div class="strip-item split-address-box">
+                            <div class="address-text-row">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <span>3541 43rd Avenue South,<br>Minneapolis, MN 55406</span>
+                            </div>
+                            <div class="button-row">
+                                <a href="https://google.com" target="_blank" rel="noopener" class="inline-map-btn">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split-form-container">
+                    <h3>Send an Inquiry</h3>
+                    <form action="#" method="POST" class="inquiry-form">
+                        <div class="split-form-grid">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="tel" placeholder="Contact Number">
+                            <input type="text" placeholder="Child's Age (e.g., 14 Months)">
+                            <input type="text" placeholder="Desired Start Date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                            <input type="text" placeholder="Address / Postal Code">
+                        </div>
+                        <textarea placeholder="Additional notes or questions..." rows="4"></textarea>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2825.263884872322!2d-93.2132332!3d44.9382902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b32bee1bf88d7d%3A0x280e22ef7a6ccae4!2s3541%2043rd%20Ave%20S%2C%20Minneapolis%2C%20MN%2055406%2C%20USA!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+        </div>
+    </section>
 
     <!-- 6. FOOTER SECTION -->
     <footer>
