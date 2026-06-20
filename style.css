@@ -798,7 +798,12 @@ footer a:hover{
         gap:10px;
     }
 }
-
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:15px;
+}
 @media (max-width:600px){
 
     .form-grid{
