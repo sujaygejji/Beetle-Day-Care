@@ -697,6 +697,32 @@ h3,
     padding: 0 20px;
 }
 
+.contact-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.contact-brand img{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+}
+
+.contact-brand span{
+    font-family:'Fredoka',sans-serif;
+    font-size:24px;
+    font-weight:600;
+    color:#FF9B6A;
+}
+
+.contact-divider{
+    border:none;
+    border-top:1px solid rgba(255,255,255,0.15);
+    margin:22px 0;
+}
+
 /* ==========================================
    8. FOOTER
 ========================================== */
