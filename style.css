@@ -1,51 +1,58 @@
 /* ==========================================
    1. GLOBAL STYLES & VARIABLES
-   ========================================== */
+========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Quicksand', sans-serif;
     color: #102A43;
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     line-height: 1.6;
-    padding-top: 100px; /* Perfect safety clearing space for sticky navbars */
+    padding-top: 100px;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, .brand-main-heading {
+h1,
+h2,
+h3,
+.brand-main-heading {
     font-family: 'Fredoka', sans-serif;
     color: #102A43;
-    font-weight: 400; /* Crisp, clean, premium thin text weight profile */
+    font-weight: 400;
 }
 
 .section-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 60px 20px;
 }
 
 /* ==========================================
    2. FIXED HEADER & NAVIGATION BAR
-   ========================================== */
+========================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95); 
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05);
-    z-index: 1000;
     border-bottom: 1px solid rgba(16, 42, 67, 0.04);
+    z-index: 1000;
 }
 
 .nav-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -55,8 +62,8 @@ h1, h2, h3, .brand-main-heading {
 .logo-area {
     display: flex;
     align-items: center;
-    text-decoration: none;
     gap: 12px;
+    text-decoration: none;
 }
 
 .logo-img {
@@ -91,17 +98,18 @@ h1, h2, h3, .brand-main-heading {
 
 .nav-menu {
     display: flex;
+    align-items: center;
     gap: 24px;
     list-style: none;
-    align-items: center;
+    row-gap: 10px;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #0F172A; 
-    font-weight: 700;
+    color: #0F172A;
     font-size: 15px;
-    transition: color 0.2s ease;
+    font-weight: 700;
+    transition: 0.2s;
     white-space: nowrap;
 }
 
@@ -110,16 +118,16 @@ h1, h2, h3, .brand-main-heading {
 }
 
 /* ==========================================
-   3. HERO SECTION (Custom Typography & Board Overlay)
-   ========================================== */
+   3. HERO SECTION
+========================================== */
 .hero-section {
-    background-color: #FFFFFF;
-    padding: 40px 0 80px 0;
+    background: #FFFFFF;
+    padding: 40px 0 80px;
 }
 
 .hero-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -131,13 +139,13 @@ h1, h2, h3, .brand-main-heading {
 }
 
 .hero-badge {
-    background-color: #EBF8FF;
+    display: inline-block;
+    background: #EBF8FF;
     color: #2B6CB0;
-    font-weight: 700;
-    font-size: 13px;
     padding: 6px 14px;
     border-radius: 20px;
-    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
@@ -145,12 +153,10 @@ h1, h2, h3, .brand-main-heading {
     margin-right: 4px;
 }
 
-/* HYBRID HIGH-PERFORMANCE SEO H1 DESIGN */
 .brand-main-heading {
     font-size: 40px;
-    font-weight: 300;         /* Beautifully thin font style */
-    line-height: 1.4;         /* Comfortable breathing line spacing gap */
-    letter-spacing: 0.5px;    /* Elegant letter dispersion grid */
+    line-height: 1.4;
+    letter-spacing: 0.5px;
     margin-bottom: 15px;
 }
 
@@ -167,15 +173,15 @@ h1, h2, h3, .brand-main-heading {
 .hero-tagline {
     font-size: 24px;
     color: #D97745;
-    margin-bottom: 20px;
     font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .hero-description {
     font-size: 16px;
     color: #486581;
-    margin-bottom: 30px;
     max-width: 540px;
+    margin-bottom: 30px;
 }
 
 .hero-buttons {
@@ -184,47 +190,51 @@ h1, h2, h3, .brand-main-heading {
     margin-bottom: 40px;
 }
 
+.btn-primary,
+.btn-secondary,
+.inline-map-btn {
+    cursor: pointer;
+}
+
 .btn-primary {
-    background-color: #D97745;
-    color: white;
+    background: #D97745;
+    color: #fff;
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 30px;
     font-weight: 700;
     box-shadow: 0 4px 14px rgba(217, 119, 69, 0.3);
-    transition: all 0.2s ease;
-    display: inline-block;
+    transition: 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #C26132;
+    background: #C26132;
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-    background-color: #F0F4F8;
+    background: #F0F4F8;
     color: #486581;
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 30px;
     font-weight: 700;
-    display: inline-block;
-    transition: all 0.2s ease;
+    transition: 0.3s;
 }
 
 .btn-secondary:hover {
-    background-color: #E2E8F0;
+    background: #E2E8F0;
 }
 
 .highlight-bar {
-    background: white;
-    padding: 20px 30px;
+    background: #fff;
+    border: 1px solid #E4EBF1;
     border-radius: 24px;
+    padding: 20px 30px;
     display: flex;
     justify-content: center;
     gap: 30px;
     box-shadow: 0 10px 30px rgba(16, 42, 67, 0.08);
-    border: 1px solid #E4EBF1;
 }
 
 .highlight-bar span {
@@ -239,41 +249,37 @@ h1, h2, h3, .brand-main-heading {
     font-family: 'Fredoka', sans-serif;
 }
 
-/* HERO CONTAINER PICTURE & WALL OVERLAY ASSIGNMENTS */
+/* Hero Image */
 .hero-image {
     flex: 1;
     display: flex;
     justify-content: center;
-    position: relative; 
 }
 
 .hero-image-wrapper {
     position: relative;
     display: inline-block;
+    animation: gentleFloat 6s ease-in-out infinite;
 }
 
 .hero-image img {
     max-width: 100%;
     height: auto;
+    display: block;
     border-radius: 32px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    animation: gentleFloat 6s ease-in-out infinite;
-    display: block;
 }
 
-/* SIGNBOARD: Injects custom sign card over vector classroom wall space */
 .wall-signboard {
     position: absolute;
-    top: 16%;                /* Drops it down directly over open wall spaces */
-    left: 26%;               /* Centers it elegantly horizontally across the vector map */
-    background: #FFFFFF;
-    padding: 6px 16px;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(16, 42, 67, 0.12);
+    top: 16%;
+    left: 26%;
+    background: #fff;
     border: 2px solid #E4EBF1;
-    z-index: 10;
-    pointer-events: none;    
-    animation: gentleFloat 6s ease-in-out infinite; /* Locks down to floating graphics track */
+    border-radius: 8px;
+    padding: 6px 16px;
+    box-shadow: 0 6px 15px rgba(16, 42, 67, 0.12);
+    pointer-events: none;
 }
 
 .wall-signboard span {
@@ -286,10 +292,10 @@ h1, h2, h3, .brand-main-heading {
 
 /* ==========================================
    4. ABOUT SECTION
-   ========================================== */
+========================================== */
 .about-section {
     padding: 80px 0;
-    background-color: #FAF6F0; 
+    background: #FAF6F0;
 }
 
 .about-grid {
@@ -300,16 +306,16 @@ h1, h2, h3, .brand-main-heading {
 }
 
 .about-content {
-    flex: 0 0 55%; 
+    flex: 0 0 55%;
 }
 
 .section-badge {
+    display: block;
     font-family: 'Fredoka', sans-serif;
     font-size: 36px;
     font-weight: 700;
     color: #102A43;
     margin-bottom: 8px;
-    display: block;
 }
 
 .about-tagline {
@@ -329,7 +335,7 @@ h1, h2, h3, .brand-main-heading {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    background: #ffffff;
+    background: #fff;
     padding: 24px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
@@ -338,419 +344,11 @@ h1, h2, h3, .brand-main-heading {
 .feature-item h3 {
     font-size: 16px;
     margin-bottom: 6px;
-    color: #102A43;
 }
 
 .feature-item p {
-    color: #627D98;
     font-size: 13px;
+    color: #627D98;
 }
 
 .about-image-wrapper {
-    flex: 0 0 40%;
-    display: flex;
-    justify-content: center;
-}
-
-.about-illustration {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-    border-radius: 50%;
-    border: 12px solid #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    animation: gentleFloat 6s ease-in-out infinite;
-    animation-delay: 1s; 
-}
-
-/* ==========================================
-   5. PROGRAMS SECTION
-   ========================================== */
-.program-section {
-    background-color: #F0F4F8; 
-    padding: 80px 0;
-}
-
-.section-title {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.program-grid {
-    display: flex;
-    gap: 30px;
-}
-
-.program-card {
-    flex: 1;
-    background: #FFFFFF;
-    border-radius: 24px;
-    padding: 24px;
-    box-shadow: 0 6px 18px rgba(16,42,67,0.04);
-    transition: transform 0.2s ease;
-}
-
-.program-card:hover {
-    transform: translateY(-4px);
-}
-
-.program-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 16px;
-    margin-bottom: 20px;
-}
-
-.program-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.program-card p {
-    color: #486581;
-    font-size: 14px;
-}
-
-/* ==========================================
-   6. GALLERY SECTION
-   ========================================== */
-.gallery-section {
-    padding: 80px 20px; 
-    background-color: #FFFFFF;
-    text-align: center;
-}
-
-.gallery-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-title {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 16px; 
-}
-
-.gallery-item {
-    border-radius: 16px; 
-    overflow: hidden; 
-    aspect-ratio: 1 / 1; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease;
-}
-
-.gallery-item:hover {
-    transform: scale(1.03);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-/* ==========================================
-   7. CONTACT SECTION & BOX LAYOUTS
-   ========================================== */
-.contact-section {
-    background-color: #F5EFEB; 
-    padding: 80px 0;
-}
-
-.contact-section h2 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.contact-highlight-box {
-    background-color: #102A43; 
-    padding: 25px 30px; /* Reduced from 40px to make it thinner */
-    border-radius: 28px;
-    margin: 0 auto 40px auto;
-    box-shadow: 0 12px 35px rgba(16, 42, 67, 0.15);
-    border: 2px solid #D97745; 
-    max-width: 580px; /* Reduced from 650px to make it less wide */
-    position: relative;
-}
-/* .contact-highlight-box {
-    background-color: #102A43; 
-    padding: 40px;
-    border-radius: 28px;
-    margin: 0 auto 50px auto;
-    box-shadow: 0 12px 35px rgba(16, 42, 67, 0.15);
-    border: 2px solid #D97745; 
-    max-width: 650px; /* Reduced to fit the centered, stacked layout cleanly */
-    position: relative;
-}
-*/
-.contact-tag-badge {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%); /* Cleanly centers the header badge over the stacked card */
-    background-color: #D97745;
-    color: white;
-    padding: 4px 16px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    font-family: 'Fredoka', sans-serif;
-    text-transform: uppercase;
-}
-
-.contact-strip-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    text-align: center;
-}
-
-.strip-item {
-    font-size: 16px;
-    font-weight: 600;
-    color: #FFFFFF; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.strip-item a {
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.strip-item a:hover {
-    color: #FF9B6A;
-}
-
-.strip-item i {
-    color: #FF9B6A; 
-    font-size: 20px;
-    width: 24px;
-    text-align: center;
-}
-
-/* Updated address structural blocks to stack clean and centered */
-.address-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    width: 100%;
-}
-
-.address-text-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.inline-map-btn {
-    background-color: #2B6CB0;
-    color: #FFFFFF;
-    text-decoration: none;
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 14px;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
-    transition: all 0.2s ease;
-    border: none;
-}
-
-.inline-map-btn:hover {
-    background-color: #1A4976;
-    transform: translateY(-2px);
-}
-
-.map-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==========================================
-   8. FOOTER METRICS
-   ========================================== */
-footer {
-    background-color: #102A43;
-    color: #BCCCDC;
-    text-align: center;
-    padding: 60px 20px;
-    font-size: 14px;
-    border-top: 3px solid #D97745;
-}
-
-footer img {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-footer p {
-    color: #9FB3C8;
-}
-
-footer a {
-    color: #BCCCDC;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.2s ease;
-}
-
-footer a:hover {
-    color: #FFFFFF;
-}
-
-/* ==========================================
-   9. RESPONSIVE MEDIA QUERIES
-   ========================================== */
-@media (max-width: 992px) {
-    .hero-container, .about-grid, .program-grid {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-description {
-        margin: 0 auto 30px auto;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-    .about-content, .about-image-wrapper {
-        flex: 0 0 100%;
-    }
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .wall-signboard {
-        display: none; /* Hides relative elements on tight viewports */
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 140px; 
-    }
-    .nav-container {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-    }
-    .brand-main-heading {
-        font-size: 32px;
-    }
-    .highlight-bar {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-    .about-features {
-        grid-template-columns: 1fr; 
-    }
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .contact-highlight-box {
-        padding: 30px 20px;
-    }
-}
-
-/* ==========================================
-   10. KEYFRAME STRUCTS & ANIMATIONS
-   ========================================== */
-@keyframes gentleFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Inquiry Form Styles */
-.inquiry-form-container {
-    max-width: 650px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center;
-}
-
-.inquiry-form-container h3 {
-    font-size: 28px;
-    color: #102A43;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.inquiry-form input, 
-.inquiry-form textarea {
-    width: 100%;
-    padding: 14px 20px;
-    border: 1px solid #E4EBF1;
-    border-radius: 14px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
-    color: #102A43;
-    background-color: #FFFFFF;
-    outline: none;
-}
-
-.inquiry-form input::placeholder, 
-.inquiry-form textarea::placeholder {
-    color: #A0AEC0;
-}
-
-.inquiry-form textarea {
-    resize: none;
-    margin-bottom: 20px;
-}
-
-.btn-submit {
-    width: 100%;
-    background-color: #D97745;
-    color: white;
-    border: none;
-    padding: 16px;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 700;
-    font-family: 'Quicksand', sans-serif;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(217, 119, 69, 0.2);
-    transition: background 0.2s ease;
-}
-
-.btn-submit:hover {
-    background-color: #C26132;
-}
-
-/* Responsive adjustment for mobile screens */
-@media (max-width: 600px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-}
