@@ -700,21 +700,36 @@ h3,
 .contact-brand{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:15px;
     margin-bottom:20px;
+     
 }
 
 .contact-brand img{
-    width:45px;
-    height:45px;
+    width:60px;
+    height:60px;
     object-fit:contain;
 }
 
-.contact-brand span{
+.contact-brand-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact-brand-text span{
     font-family:'Fredoka',sans-serif;
     font-size:24px;
     font-weight:600;
     color:#FF9B6A;
+    line-height:1.2;
+}
+
+.contact-brand-text p{
+    color:#BCCCDC;
+    font-size:14px;
+    margin-top:2px;
+    margin-bottom:0;
+
 }
 
 .contact-divider{
