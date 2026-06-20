@@ -462,7 +462,7 @@ h3,
 }
 
 /* ==========================================
-   7. CONTACT SECTION (STRICT SAME-HEIGHT FIX)
+   7. CONTACT SECTION (EXACT EQUAL WIDTH & HEIGHT)
 ========================================== */
 .contact-section {
     background-color: #F5EFEB; 
@@ -475,31 +475,29 @@ h3,
     margin-bottom: 40px;
 }
 
-/* Forces parent layout wrapper to stretch child heights to exactly match */
+/* Core layout container matching everything */
 .contact-layout-wrapper {
     display: flex;
     gap: 40px;
-    align-items: stretch; /* Core logic for identical box heights */
+    align-items: stretch; 
     max-width: 1100px;
     margin: 0 auto 50px auto;
     padding: 0 20px;
 }
 
-/* Force specific same box sizes and layout flows */
+/* flex: 1 on both guarantees exact 50/50 split width */
 .split-contact-box, 
 .split-form-container {
-    flex: 1;
-    height: 100%; 
-    min-height: 480px; /* Aligns standard default view lengths */
+    flex: 1; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    border-radius: 28px;
 }
 
 .split-contact-box {
     background-color: #102A43; 
     padding: 40px 30px;
-    border-radius: 28px;
     box-shadow: 0 12px 35px rgba(16, 42, 67, 0.15);
     border: 2px solid #D97745; 
     color: #FFFFFF;
@@ -518,7 +516,6 @@ h3,
     display: flex;
     flex-direction: column;
     gap: 20px;
-    flex-grow: 1;
 }
 
 .strip-item {
@@ -547,6 +544,36 @@ h3,
     font-size: 20px;
     width: 24px;
     text-align: center;
+}
+
+/* DESIGN ADDED TO FILL EMPTY VACANT SPACE UP */
+.contact-extra-design {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.design-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+    color: #FF9B6A;
+    margin-bottom: 4px;
+}
+
+.design-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #BCCCDC;
+    padding-bottom: 4px;
+}
+
+.design-row span.days {
+    font-weight: 600;
+    color: #FFFFFF;
 }
 
 .address-item {
@@ -588,7 +615,6 @@ h3,
 .split-form-container {
     background: #FFFFFF;
     padding: 40px 35px;
-    border-radius: 28px;
     box-shadow: 0 12px 35px rgba(16, 42, 67, 0.04);
     border: 1px solid #E4EBF1;
 }
@@ -733,11 +759,6 @@ footer a:hover{
     .contact-layout-wrapper{
         flex-direction:column;
         gap:30px;
-    }
-    
-    .split-contact-box, 
-    .split-form-container {
-        min-height: auto;
     }
 }
 
